@@ -1,0 +1,226 @@
+/*头部样式开始*/
+.header{
+    width: 100%;
+    height: 85px;
+    /*background-color: #e77b2e;*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 700;
+}
+.header_logo{
+    width: 117px;
+    height: 55px;
+    /*background-color: red;*/
+    margin: 15px 0 15px 30px;
+    float: left;
+}
+.header_right ul{
+    float: right;
+    color: white;
+}
+.header_right li{
+    float: left;
+    width: 156px;
+    height: 85px;
+    line-height: 85px;
+}
+.header_right i{
+    font-size: 20px;
+    margin-right: 13px;
+}
+.header_right_box{
+    width: 165px;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    right: -165px;
+    top: 0;
+    transition: all .5s linear;
+    z-index: 600;
+}
+.header_right_li_last:hover .header_right_box{
+    right: 0;
+}
+.header_right_li_last{
+    z-index: 800;
+}
+/*头部样式结束*/
+
+/*第一块样式开始*/
+html,body,.box{
+    /*三块都是满屏，共用box类*/
+    /*设置满屏*/
+    width: 100%;
+    height: 100%;
+    /*background-color: red;*/
+}
+.one{
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+}
+.one video{
+    width: 100%;
+}
+.one_center{
+    width: 716px;
+    height: 237px;
+    /*background-color: #e77b2e;*/
+    /*设置水平垂直居中开始*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /*设置水平垂直居中结束*/
+}
+.one_center img{
+    width: 716px;
+    height: 97px;
+}
+.one_center a{
+    font-size: 16px;
+    color: white;
+    display: block;
+    width: 180px;
+    height: 50px;
+    border: 1px solid white;
+    margin: 30px auto 20px;
+    line-height: 50px;
+}
+.one_center i{
+    font-size: 40px;
+    color: white;
+    animation: upDown 1s linear infinite;
+    /*设置为块级元素，否则动画设置的transform不生效*/
+    display: block;
+}
+/*动画：设置向下箭头上下浮动*/
+@keyframes upDown {
+    0%{
+        transform: translateY(0);
+    }
+    33%{
+        transform: translateY(-3px);
+    }
+    66%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(3px);
+    }
+}
+/*第一块样式结束*/
+
+/*第二块样式开始*/
+.two{
+    position: relative;
+}
+.two img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: -1;
+}
+.two_bottom{
+    height: 71px;
+    width: 510px;
+    /*background-color: #e77b2e;*/
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.two_bottom li{
+    width: 102px;
+    height: 71px;
+    /*background-color: red;*/
+    float: left;
+    border-bottom: 1px solid rgba(255,255,255,.6);;
+}
+.two_bottom a{
+    display: block;
+    width: 47px;
+    height: 41px;
+    /*background-color: #e77b2e;*/
+    margin: 14.5px auto 14.5px;
+    /*引入背景图片*/
+    background-image: url("../images/carousel_btns.png");
+    /*设置背景图片的大小*/
+    background-size: 818px;
+    transition: all .5s;
+}
+.two_bottom li:hover a{
+    transform: translateY(-3px);
+}
+.two_bottom li:hover{
+    border-bottom: 1px solid white;
+}
+.two_bottom_a1{
+    /*给每一个a对背景图片进行移动*/
+    background-position: -642px;
+}
+.two_bottom_a2{
+    background-position: -934px;
+}
+.two_bottom_a3{
+    background-position: -739px;
+}
+.two_bottom_a4{
+    background-position: -224px;
+}
+.two_bottom_a5{
+    background-position: -1265px;
+}
+/*第二块样式结束*/
+
+/*第三块样式开始*/
+.three_left{
+    width: 50%;
+    height: 100%;
+    /*background-color: #e77b2e;*/
+    float: left;
+}
+.three_right{
+    width: 50%;
+    height: 100%;
+    /*background-color: red;*/
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+.three_right:hover .hidden,.three_left_up:hover .hidden,.three_left_down:hover .hidden{
+    left: 0;
+}
+.three_left>div{
+    width: 100%;
+    height: 50%;
+}
+.three_left_up{
+    width: 100%;
+    height: 100%;
+    /*background-color: white;*/
+    position: relative;
+    overflow: hidden;
+    transition: all .5s linear;
+}
+.three_left_down{
+    /*background-color: black;*/
+    position: relative;
+    overflow: hidden;
+    transition: all .5s linear;
+}
+.three img{
+    width: 100%;
+    height: 100%;
+}
+.hidden{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: all .5s linear;
+}
+/*第三块样式结束*/

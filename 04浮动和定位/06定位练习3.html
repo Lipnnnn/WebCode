@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位练习</title>
+    <style>
+        .box{
+            width: 290px;
+            height: 390px;
+            background-color: pink;
+            /*设置父元素为相对定位*/
+            position: relative;
+        }
+        img{
+            width: 120px;
+            /*设置子元素为绝对定位，距离父元素上端30px，左侧80px*/
+            position: absolute;
+            top: 30px;
+            left: 80px;
+        }
+        /*当鼠标悬停在box上时，选中img1元素*/
+        .box:hover > .img1{
+            /*移动img1元素的位置，距离父元素左侧变为50px*/
+            left: 50px;
+        }
+        .box:hover > .img2{
+            left: 110px;
+        }
+    </style>
+</head>
+<body>
+<!--290 390 120 55-->
+<div class="box">
+    <img src="20190916182659b.png" alt="" class="img1">
+    <img src="20190916182852a.png" alt="" class="img2">
+</div>
+</body>
+</html>

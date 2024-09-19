@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let和const命令</title>
+</head>
+<body>
+<script>
+    /*
+        let：
+            1. 作用域范围：
+                var: 函数级作用域
+                let: 花括号级作用域
+            2. let不存在遍历提升
+            3. let不允许重复声明
+
+        const：
+            1. const声明一个只读的常量。一旦声明，常量的值就不可改变。
+            2. const也是花括号级作用域
+            3. const声明的常量也不存在提升
+            4. const声明的常量也不可重复声明
+     */
+
+    let name = '张三';
+    console.log(name);  // 张三
+
+    const a = 'A';
+    console.log(a);  // A
+
+</script>
+</body>
+</html>

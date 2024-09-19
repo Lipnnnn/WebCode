@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的扩展</title>
+</head>
+<body>
+<script>
+    /*
+        1. 函数参数的默认值：
+           ES6 允许为函数的参数设置默认值，即直接写在参数定义的后面。
+           function log(x, y = 'World') {
+             console.log(x, y);
+           }
+           log('Hello') // Hello World
+           log('Hello', 'China') // Hello China
+           log('Hello', '') // Hello
+        2. 箭头函数：
+           ES6 允许使用“箭头”（=>）定义函数
+           var f = v => v;
+           // 等同于
+           var f = function (v) {
+             return v;
+           };
+
+           箭头函数的一个用处是简化回调函数。
+           或者说是一般用在匿名函数。
+
+           // 正常函数写法
+            [1,2,3].map(function (x) {
+              return x * x;
+            });
+
+            // 箭头函数写法
+            [1,2,3].map(x => x * x);
+     */
+
+    // 箭头函数
+    // x和y表示参数，fun表示函数的名字，大括号{}里面的内容是函数体
+    var fun = (x,y) => {
+        console.log(x);
+        console.log(y);
+        console.log(x+y);
+    }
+
+    fun(1,2);
+
+
+
+</script>
+</body>
+</html>

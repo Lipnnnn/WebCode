@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修饰符</title>
+  <script>
+
+    // 1. g 修饰符：默认情况下，第一次匹配成功后，正则对象就停止向下匹配了。g修饰符表示全局匹配（global），加上它以后，正则对象将匹配全部符合条件的结果，主要用于搜索和替换。
+    var regex1 = /b/g;  // 每次匹配成功之后，下次匹配就会从这个位置的后一个位置开始匹配
+    var str1 = 'abcabcabc';
+    console.log(regex1.lastIndex);  // 0  （表示从下标为0的位置开始匹配）
+    console.log(regex1.test(str1));  // true
+    console.log(regex1.lastIndex);  // 2  （表示从下标为2的位置开始匹配）
+    console.log(regex1.test(str1));  // true
+    console.log(regex1.lastIndex);  // 5
+    console.log(regex1.test(str1));  // true
+    console.log(regex1.lastIndex);  // 8
+    console.log(regex1.test(str1));  // false
+
+    // 2. i 修饰符：默认情况下，正则对象区分字母的大小写，加上i修饰符以后表示忽略大小写（ignorecase）。
+    var regex2 = /hello/;
+    var regex3 = /hello/i;  // 忽略大小写
+    var str2 = 'HELlo';
+    console.log(regex2.test(str2));  // false
+    console.log(regex3.test(str2));  // true
+
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>

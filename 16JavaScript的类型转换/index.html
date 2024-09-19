@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript的类型转换</title>
+    <script>
+        /* 强制转换：
+            强制转换主要指使用Number、String和Boolean三个函数，手动将各种类型的值，分布转换成数字、字符串或者布尔值。
+        */
+        // ① Number
+        // 使用Number函数，可以将任意类型的值转化成数值。
+        Number('324');
+
+        // ② String
+        // String函数可以将任意类型的值转化成字符串
+        String(123);
+
+        // ③ Boolean
+        // Boolean函数可以将任意类型的值转为布尔值。
+        Boolean('');
+        /*
+            它的转换规则相对简单：除了以下五个值的转换结果为false，其他的值全部为true。
+            undefined
+            null
+            -0或+0
+            NaN
+            ''（空字符串）
+        */
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

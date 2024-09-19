@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookie对象</title>
+  <script>
+    /*
+        cookie:存储本地信息的解决方案
+            1. 每条大小限制：4kb
+            2. 随着网络请求进行携带发送
+
+        cookie操作：
+            1. 写入：document.cookie='字符串'
+               字符串：name\value\domain\path\expires   // 键\值\域名\地址\过期时间
+               标准：document.cookie='username=iwen;'   // username是键，iwen是值
+            2. 读取：document.cookie;
+            3. 删除：cookie没有删除操作，如果想要删除，就把时间设置为过期时间
+     */
+
+    var cookie = {
+        set: function (name,value,days){
+            var d = new Date();
+            d.setDate(d.getDate()+days);
+            // ES6的模板语法操作方案
+            document.cookie = `${name}=${encodeURIComponent(value)};expires=${d};path=/`;
+        },
+        get: function (name){
+            var arr = decodeURIComponent(document.cookie).split('; ');
+            for(var i=0;i<arr.length;i++){
+                var newArr = arr[i].split('=');
+                if(name === newArr[0]){
+                    return newArr[1];
+                }
+            }
+        },
+        unset: function (name){
+            this.set(name,'',-1);
+        }
+    }
+
+    cookie.set('hello','hhh',30);
+    console.log(cookie.get('hello'));
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

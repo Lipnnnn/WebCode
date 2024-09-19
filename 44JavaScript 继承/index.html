@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+
+    <script>
+        function Shape(x,y){
+            this.x = x;
+            this.y = y;
+        }
+
+        function Reat(){
+            // 调用父类的构造函数
+            Shape.call(this);  // 这句话就是表示Reat继承了Shape
+        }
+
+        Reat.prototype = Object.create(Shape.prototype);  // 把Shape的原型也继承过来
+        Reat.prototype.constructor = Reat;  // 把构造函数改过来
+
+        var r = new Reat(10,20);  // 这里的r是继承了Shape的，可以使用Shape中的属性和方法
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回到顶部</title>
+    <style>
+        h1{
+            width: 500px;
+            height: 500px;
+        }
+        #btn{
+            width: 40px;
+            height: 50px;
+            background-color: #333;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            color: white;
+            text-align: center;
+            line-height: 25px;
+            text-decoration: none;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h1>内容1</h1>
+<h1>内容2</h1>
+<h1>内容3</h1>
+<h1>内容4</h1>
+<h1>内容5</h1>
+<h1>内容6</h1>
+<h1>内容7</h1>
+<h1>内容8</h1>
+<a href="javaScript:void(0)" id="btn">回到顶部</a>
+
+<script>
+    var btn = document.getElementById('btn');
+
+    // document.documentElement.clientHeight 这个属性可以返回当前浏览器窗口的高度！！！
+    var windowHeight = document.documentElement.clientHeight;  // 浏览器窗口的高度
+
+    // 添加滚动事件，设置当屏幕滚动一倍屏幕高度时，再显示btn按钮
+    window.onscroll = function (){
+        // document.documentElement.scrollTop 这个属性可以获取网页的垂直滚动距离！！！
+        var scrollHeight = document.documentElement.scrollTop;  // 当前滚动的高度
+        if(scrollHeight > windowHeight){
+            btn.style.display = 'block';
+        }else {
+            btn.style.display = 'none';
+        }
+    }
+
+    var timer = null;
+    // 给按钮添加回到顶部的点击事件
+    btn.onclick = function (){
+        // 添加一个定时器，实现缓慢回到顶部的效果
+        timer = setInterval(function (){
+            var scrollHeight = document.documentElement.scrollTop;  // 当前滚动的高度
+            var change = Math.floor(-scrollHeight / 10);
+            document.documentElement.scrollTop = scrollHeight + change; // 计时器每次执行减少它本来高度的十分之一
+            console.log(typeof scrollHeight);
+            if(scrollHeight === 0){
+                // 如果回到顶部了，就取消这个定时器
+                clearInterval(timer);
+            }
+        },30)
+    }
+</script>
+
+</body>
+</html>

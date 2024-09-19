@@ -1,0 +1,404 @@
+/*导航样式开始*/
+.nav{
+    width: 100%;
+    height: 66px;
+    background-color: #88c5e1;
+    border-bottom: 5px solid #54abd4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.wrap{
+    width: 87%;
+    margin: 0 auto;
+}
+.logo,.search,.nav-bar{
+    height: 66px;
+    float: left;
+}
+.text-input{
+    width: 100%;
+    height: 40px;
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    box-sizing: border-box;
+    border-radius: 2px;
+    outline: none;
+    margin-top: 13px;
+    padding-left: 10px;
+    transition: all .2s;
+}
+.search button{
+    width: 40px;
+    height: 34px;
+    background-color: #f5f5f5;
+    color: #54abd4;
+    font-weight: 900;
+    position: absolute;
+    right: 2px;
+    top: 16px;
+}
+.text-input:hover{
+    background-color: #fff;
+    border-color: #54abd4;
+}
+.nav-bar>ul{
+    float: right;
+}
+.nav-bar li{
+    float: left;
+}
+.nav-bar a{
+    color: #fff;
+    padding: 10px;
+    display: block;
+    margin-left: 8px;
+    margin-top: 12.5px;
+}
+.nav-bar-active{
+    border-bottom: 2px solid #fff;
+}
+.nav-bar a:hover{
+    border-bottom: 2px solid #fff;
+}
+/*导航样式结束*/
+/*登录样式开始*/
+.login{
+    width: 100%;
+    background-image: url("../images/homeImg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top: 71px;
+    box-sizing: border-box;
+}
+.login-logo,.form{
+    float: left;
+}
+.form li{
+    float: left;
+}
+.form li a{
+    color: #fff;
+    padding: 10px 0 3px;
+    display: block;
+    margin-right: 15px;
+}
+.form li a:hover{
+    border-bottom: 2px solid #fff;
+}
+.rem{
+    margin: 15px 0;
+    text-align: left;
+    color: #fff;
+    font-size: 12px;
+}
+.rem>a{
+    float: right;
+    color: #fff;
+}
+.rem>a:hover{
+    text-decoration: underline;
+}
+.rem>input{
+    margin-right: 10px;
+    /*自己小范围移动*/
+    position: relative;
+    top: 2px;
+}
+.form button{
+    width: 100%;
+    height: 44px;
+    background-color: #88c5e1;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 6px;
+    /*字符之前的距离*/
+    letter-spacing: 2px;
+    box-shadow: 0 8px #54abd4;
+}
+.form button:hover{
+    transform: translateY(3px);
+    box-shadow: 0 5px #54abd4;
+}
+/*登录样式结束*/
+/*新课速度样式开始*/
+.content{
+    padding-top: 40px;
+}
+.new-course,.hot-course,.hot-tag{
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 14px 10px -10px rgba(0,0,0,0.1);
+    /*开启BFC格式  块级格式上下文  变为独立的一块  子元素布局不会影响父元素*/
+    overflow: hidden;
+    padding-bottom: 60px;
+}
+.container{
+    width: 93%;
+    margin: 0 auto;
+}
+.title{
+    font-weight: 400;
+    font-size: 18px;
+    text-align: left;
+    padding: 8px 0 8px 16px;
+    border-left: 3px solid #54abd4;
+    margin: 40px 0 36px;
+}
+.new-course-box>div{
+    width: 50%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.new-course-box>div>div{
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 1px 1px 2px #DDD;
+}
+.new-course-box img{
+    width: 100%;
+}
+.new-course-box p{
+    color: #999;
+    line-height: 80px;
+}
+/*新课速度样式结束*/
+/*最热门课程榜样式开始*/
+.more{
+    color: #7d7d7d;
+    font-size: 12px;
+}
+.more:hover{
+    color: #54abd4;
+    text-decoration: underline;
+}
+.hot-course-box>div{
+    float: left;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.hot-course-box>div>div{
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    padding: 52px 16px;
+    box-sizing: border-box;
+}
+.goods-img{
+    width: 46px;
+}
+.name{
+    display: block;
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 3px;
+    height: 24px;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.name:hover{
+    color: #54abd4;
+    text-decoration: underline;
+}
+.message{
+    margin-top: 15px;
+}
+.link{
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    background-color: #88c5e1;
+    padding: 3px 5px;
+    margin: 0 4px 4px 0;
+}
+.link:hover{
+    background-color: #54abd4;
+}
+.score{
+    margin: 10px 0 5px;
+    color: #f8ce38;
+    font-size: 12px;
+}
+.score>img{
+    width: 12px;
+    position: relative;
+    top: 2px;
+}
+.comment{
+    color: #7d7d7d;
+    font-size: 12px;
+}
+.comment>a{
+    color: #7d7d7d;
+}
+.comment>a:hover{
+    color: #54abd4;
+    text-decoration: underline;
+}
+/*最热门课程榜样式结束*/
+/*热门标签样式开始*/
+.hot-tag-box{
+    text-align: left;
+    margin-bottom: 18px;
+}
+.hot-tag-box>h5{
+    font-weight: 400;
+    color: #666;
+    padding: 8px 0 16px;
+}
+/*热门标签样式结束*/
+
+
+/***********************移动端开始***********************/
+@media screen and (max-width: 768px) {
+    .logo{
+        width: 16%;
+        background: url("../images/Brand-S.png") no-repeat left;
+        background-size: 38px;
+    }
+    .search{
+        width: 68%;
+        position: relative;
+    }
+    .nav-bar{
+        display: none;
+    }
+    .btn{
+        width: 43px;
+        height: 43px;
+        border: 1px solid #fff;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 43px;
+        float: right;
+        color: #fff;
+        margin-top: 10.5px;
+    }
+    /*登录*/
+    .login{
+        height: 365px;
+        padding-top: 85px;
+    }
+    .login-logo{
+        display: none;
+    }
+    .form{
+        width: 100%;
+    }
+    /*新课*/
+    .new-course,.hot-course{
+        width: 100%;
+    }
+    .new-course-box>div{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    /*热门课程*/
+    .hot-course-box>div{
+        width: 100%;
+    }
+}
+/*移动端结束*/
+/*ipad端开始*/
+@media screen and (max-width: 992px) and (min-width: 768px) {
+    .logo{
+        width: 18%;
+        background: url("../images/Brand-M.png") no-repeat left;
+        background-size: 86px;
+    }
+    .search{
+        width: 42%;
+        position: relative;
+    }
+    .nav-bar{
+        width: 40%;
+    }
+    .btn{
+        display: none;
+    }
+    /*登录*/
+    .login{
+        height: 338px;
+        padding-top: 15px;
+    }
+    .login-logo{
+        width: 57%;
+    }
+    .form{
+        width: 43%;
+    }
+    /*新课*/
+    .new-course,.hot-course{
+        width: 100%;
+    }
+    .hot-course-box>div{
+        width: 50%;
+    }
+}
+/*ipad结束*/
+/*pc端开始*/
+@media screen and (min-width: 992px){
+    .logo{
+        width: 25%;
+        background: url("../images/Brand.png") no-repeat left;
+        background-size: 183px;
+    }
+    .search{
+        width: 40%;
+        position: relative;
+    }
+    .nav-bar{
+        width: 35%;
+    }
+    .btn{
+        display: none;
+    }
+    /*登录*/
+    .login{
+        height: 460px;
+        padding-top: 75px;
+    }
+    .login-logo{
+        width: 70%;
+    }
+    .form{
+        width: 30%;
+    }
+    /*新课*/
+    .new-course,.hot-course{
+        width: 64%;
+    }
+    /*热门课程*/
+    .hot-course-box>div{
+        width: 33%;
+    }
+    /*热门标签*/
+    .content>.wrap{
+        position: relative;
+    }
+    .hot-tag{
+        width: 31%;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+/*pc端结束*/
+
+
+
+
+
+
+
+
+
+

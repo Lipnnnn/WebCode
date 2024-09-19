@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组常用的方法</title>
+    <script>
+
+        /*
+            这里一共列举了12个常用方法：（需要掌握！）
+            isArray(); toString(); push(); pop(); shift(); unshift();
+            join(); concat(); reverse(); slice(); splice(); indexOf();
+         */
+
+        // 1.isArray()：返回一个布尔值，表示参数是否为数组。它可以弥补typeof运算符的不足。
+        var arr = [1, 2, 3];
+        typeof arr // "object"
+        Array.isArray(arr) // true
+
+        // 2.toString()：toString方法是对象的通用方法，数组的toString方法返回数组的字符串形式。
+        var arr = [1, 2, 3];
+        arr.toString() // "1,2,3"
+        var arr = [1, 2, 3, [4, 5, 6]];
+        arr.toString() // "1,2,3,4,5,6"
+
+        // 3.push()：用于在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度。注意，该方法会改变原数组。
+        var arr = [];
+        arr.push(1) // 1
+        arr.push('a') // 2
+        arr.push(true, {}) // 4
+        arr // [1, 'a', true, {}]
+
+        // 4.pop()：用于删除数组的最后一个元素，并返回该元素。注意，该方法会改变原数组。
+        var arr = ['a', 'b', 'c'];
+        arr.pop() // 'c'
+        arr // ['a', 'b']
+
+        // 5.shift()：用于删除数组的第一个元素，并返回该元素。注意，该方法会改变原数组。
+        var a = ['a', 'b', 'c'];
+        a.shift() // 'a'
+        a // ['b', 'c']
+
+        // 6.unshift()：用于在数组的第一个位置添加元素，并返回添加新元素后的数组长度。注意，该方法会改变原数组。
+        var a = ['a', 'b', 'c'];
+        a.unshift('x'); // 4
+        a // ['x', 'a', 'b', 'c']
+
+        // 7.join()：join方法以指定参数作为分隔符，将所有数组成员连接为一个字符串返回。如果不提供参数，默认用逗号分隔。
+        var a = [1, 2, 3, 4];
+        a.join(' ') // '1 2 3 4'
+        a.join(' | ') // "1 | 2 | 3 | 4"
+        a.join() // "1,2,3,4"
+        // console.log(a.join(""));  // '1234'
+
+        // 8.concat()：用于多个数组的合并。它将新数组的成员，添加到原数组成员的后部，然后返回一个新数组，原数组不变。
+        ['hello'].concat(['world'])
+        // ["hello", "world"]
+        ['hello'].concat(['world'], ['!'])
+        // ["hello", "world", "!"]
+
+        // 9.reverse()：reverse方法用于颠倒排列数组元素，返回改变后的数组。注意，该方法将改变原数组。
+        var a = ['a', 'b', 'c'];
+        a.reverse() // ["c", "b", "a"]
+        a // ["c", "b", "a"]
+
+        // 10.slice()：用于提取目标数组的一部分，返回一个新数组，原数组不变。
+        arr.slice(start, end);
+        // 它的 b（但该位置的元素本身不包括在内）。如果省略第二个参数，则一直返回到原数组的最后一个成员。
+        var a = ['a', 'b', 'c'];
+        a.slice(0) // ["a", "b", "c"]
+        a.slice(1) // ["b", "c"]
+        a.slice(1, 2) // ["b"]
+        a.slice(2, 6) // ["c"]
+        a.slice() // ["a", "b", "c"]
+
+        // 11.splice()：用于删除原数组的一部分成员，并可以在删除的位置添加新的数组成员，返回值是被删除的元素。注意，该方法会改变原数组。
+        // arr.splice(start, count, addElement1, addElement2, ...);
+        // splice的第一个参数是删除的起始位置（从0开始），第二个参数是被删除的元素个数。如果后面还有更多的参数，则表示这些就是要被插入数组的新元素。
+        var a = ['a', 'b', 'c', 'd', 'e', 'f'];
+        a.splice(4, 2) // ["e", "f"]
+        a // ["a", "b", "c", "d"]
+        // 上面代码从原数组4号位置，删除了两个数组成员。
+
+        var a = ['a', 'b', 'c', 'd', 'e', 'f'];
+        a.splice(4, 2, 1, 2) // ["e", "f"]
+        a // ["a", "b", "c", "d", 1, 2]
+        // 上面代码除了删除成员，还插入了两个新成员。
+
+        // 12.indexOf()：返回给定元素在数组中第一次出现的位置，如果没有出现则返回-1
+        var a = ['a', 'b', 'c'];
+        a.indexOf('b') // 1
+        a.indexOf('y') // -1
+        // indexOf方法还可以接受第二个参数，表示搜索的开始位置。
+        ['a', 'b', 'c'].indexOf('a', 1) // -1
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

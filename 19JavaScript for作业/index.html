@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for作业</title>
+  <script>
+    // 1.循环输出1~100之间数字的和
+    var sum = 0;
+    for(var i=1;i<=100;i++){
+      sum += i;
+    }
+    console.log(sum);
+
+    // 2.循环输出1000以内的奇数
+    for(var i=1;i<=1000;i++){
+      if(i%2!==0){
+        console.log(i);
+      }
+    }
+
+    // 3.打印九九乘法表
+    for(var i=1;i<=9;i++){
+      for(var j=1;j<=i;j++){
+        // document.write(j + "*" + i + "=" + j*i + " ");
+        document.write(j , "*" , i , "=" , j*i , " ");
+      }
+      document.write("</br>");
+    }
+
+    // 4.小明单位发了100元的购物卡，小明到超市买三类洗化用品，洗发水（15元），香皂（2元），牙刷（5元）。要把100元整好花掉，可如有哪些购买结合？
+    var cnt = 1;
+    for(var x=0;x<50;x++){
+      for(var y=0;y<50;y++){
+        for(var z=0;z<50;z++){
+          if(15*x+2*y+5*z === 100){
+            console.log(cnt + '：' + x + '个洗发水，' + y + '个香皂，' + z + '个牙刷;');
+            cnt++;
+          }
+        }
+      }
+    }
+
+    // 5.通过for循环实现百钱买百🐔的题:公鸡5元每只，母鸡3元每只，小鸡3只1元，100元买一百只鸡多少种办法？
+    var cnt=0;
+    for(var x=0;x<=20;x++){
+      for(var y=0;y<=40;y++){
+        var z = 100-x-y;   //小鸡的数量
+        if(x+y+z===100 && 5*x+3*y+z/3===100){
+          cnt++;
+        }
+      }
+    }
+    console.log(cnt);
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

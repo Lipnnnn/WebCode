@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的扩展</title>
+</head>
+<body>
+<script>
+    /*
+        1. 扩展运算符：三个点(...)
+           作用就是展开数组
+           let arr = [10,20,30];
+           console.log(...arr);  // 10 20 30
+        2. Array.from()方法：
+           用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括 ES6 新增的数据结构 Set 和 Map）。
+        3. Array.of()方法：
+           用于将一组值，转换为数组。
+           Array.of(3, 11, 8) // [3,11,8]
+        4. includes()方法：
+           返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似。ES2016 引入了该方法。
+           [1, 2, 3].includes(2)     // true
+     */
+
+    // 扩展运算符
+    let arr = [10,20,30];
+    console.log(...arr);  // 10 20 30
+    // 可用于合并数组
+    let arr2 = [40,50];
+    console.log("合并后的数组：" + [...arr,...arr2]);  // 合并后的数组：10,20,30,40,50
+
+</script>
+</body>
+</html>

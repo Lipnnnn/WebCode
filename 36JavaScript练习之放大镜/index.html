@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        .small_box{
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            border: 2px solid gray;
+            margin-top: 100px;
+            margin-left: 100px;
+            float: left;
+            position: relative;
+        }
+        .small_box_img{
+            width: 80%;
+            height: 80%;
+            margin: 50px;
+        }
+        .big_box{
+            width: 800px;
+            height: 800px;
+            background-color: white;
+            float: left;
+            margin-top: 100px;
+            /*大的图片是使用背景图片实现的*/
+            background-image: url("aaa.jpg");
+            background-repeat: no-repeat;
+            border: 2px solid gray;
+            display: none;
+        }
+        .small_box_slider{
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 192, 203, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="small_box" id="small_box">
+    <img class="small_box_img" src="aaa.jpg" alt="">
+    <div class="small_box_slider" id="small_box_slider"></div>
+</div>
+<div class="big_box" id="big_box"></div>
+
+<script>
+
+    var big_box = document.getElementById('big_box');
+    var small_box = document.getElementById('small_box');
+    var small_box_slider = document.getElementById('small_box_slider');
+    // 给big_box添加鼠标事件，当鼠标停留在big_box上时，显示方框和大图
+    small_box.onmouseover = function (){
+        small_box_slider.style.display = 'block';
+        big_box.style.display = 'block';
+    }
+    // 当鼠标离开big_box上时，隐藏方框和大图
+    small_box.onmouseout = function (){
+        small_box_slider.style.display = 'none';
+        big_box.style.display = 'none';
+    }
+
+    // 接下来实现让粉色方框跟随鼠标移动
+    // Event对象有一个属性可以获取鼠标的位置
+    small_box.onmousemove = function (e){  // 当small_box元素上有鼠标移动时，执行此事件
+        // 下面的x表示粉色方框距离small_box左边框的距离，y表示粉色方框距离small_box上边框的距离
+        var x = e.clientX - small_box.offsetLeft - 100; // small_box.offsetLeft是small_box元素距离屏幕左侧的距离
+        var y = e.clientY - small_box.offsetTop - 100;  // 减去100是减去粉色方框宽度/高度的一半，目的是使鼠标的位置位于粉色方框的正中间！
+        // 设置让粉色方框不能超出父元素(small_box)边框
+        if(x < 0){
+            x = 0;
+        }
+        if(x > 300){
+            x = 300;
+        }
+        if(y < 0){
+            y = 0;
+        }
+        if(y > 300){
+            y = 300;
+        }
+        // 让粉色方框位置为鼠标位置
+        small_box_slider.style.left = x + "px";
+        small_box_slider.style.top = y + "px";
+
+        // 接下来设置big_box的背景图片的移动距离
+        var rate = 800 / 400;  // rate表示大图与小图的比例
+        big_box.style.backgroundPosition = -x*rate +"px" +" " + -y*rate + 'px' // 当小图移动x距离时，大图要移动x*rate距离
+
+    }
+
+</script>
+
+</body>
+</html>

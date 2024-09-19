@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元字符</title>
+
+  <script>
+
+    // 1.点字符(.)：.代表任意的一个字符（只能匹配一个字符，不能多个）
+    var regex1 = /c.t/;
+    console.log(regex1.test('cat'));  // true
+    console.log(regex1.test('cbt'));  // true
+    console.log(regex1.test('caat'));  // false
+
+    // 2.位置字符(^)：表示字符串以什么开始
+    var regex2 = /^hello/;  // 匹配以'hello'字符串开始的字符串
+    console.log(regex2.test('helloworld'));  // true
+    console.log(regex2.test('worldhello'));  // false
+
+    // 3.位置字符($)：表示字符串以什么结束
+    var regex3 = /hello$/;  // 匹配以'hello'字符串结束的字符串
+    console.log(regex3.test('helloworld'));  // false
+    console.log(regex3.test('worldhello'));  // true
+
+    // 4./^字符串$/：表示从开始到结束都只能有'字符串'这个字符串
+    var regex4 = /^hello$/;
+    console.log(regex4.test('helloworld'));  // false
+    console.log(regex4.test('worldhello'));  // false
+    console.log(regex4.test('hello'));  // true
+
+    // 5.选择符(|)：竖线符号（|）在正则表达式中表示“或关系”（OR），即cat|dog表示匹配cat或dog
+    var regex5 = /aa|bb/;  // 字符串中存在'aa'或者'bb'就会匹配成功
+    console.log(regex5.test('ab'));  // false
+    console.log(regex5.test('aab'));  // true
+    console.log(regex5.test('a'));  // false
+
+    // 6.[]表示有一系列字符可供选择，只要匹配其中一个就可以了。所有可供选择的字符都放在方括号内，比如[xyz] 表示x、y、z之中任选一个匹配。
+    var regex6 = /[xyz]/;  // 只要字符串中存在'x','y','z'中的任意一个或多个即可匹配成功
+    console.log(regex6.test('x'));  // true
+    console.log(regex6.test('xy'));  // true
+    console.log(regex6.test('a'));  // false
+
+    // 7.脱字符([^])：如果方括号内的第一个字符是[^]，则表示除了字符类之中的字符，其他字符都可以匹配。比如，[^xyz]表示除了x、y、z之外都可以匹配。
+    var regex7 = /[^xyz]/;  // 只要字符串中存在除了'x','y','z'以外的任意一个或多个字符即可匹配成功
+    console.log(regex7.test('x'));  // false
+    console.log(regex7.test('xz'));  // false
+    console.log(regex7.test('xyza'));  // true
+
+    // 8.连字符([-])：某些情况下，对于连续序列的字符，连字符（-）用来提供简写形式，表示字符的连续范围。比如，[abc]可以写成[a-c]，[0123456789]可以写成[0-9]，同理[A-Z]表示26个大写字母。
+    var regex8 = /[0-9]/;  // 只要字符串中存在0123456789这些数字的其中一个即可匹配成功
+    console.log(regex8.test('0ab'));  // true
+
+    // 9.简写方式(\d)：\d 匹配0-9之间的任一数字，相当于[0-9]。
+    var regex9 = /\d/;  // 表示只要字符串中含有数字即可匹配成功
+    console.log(regex9.test('123a'));  // true
+
+    // 10.简写方式(\D)：匹配所有0-9以外的字符，相当于[^0-9]。
+    var regex10 = /\D/;  // 只要含有除数字以外的字符即可匹配成功
+    console.log(regex10.test('123'));  // false
+    console.log(regex10.test('123a'));  // true
+
+    // 11.简写方式(\w)：匹配任意的字母、数字和下划线，相当于[A-Za-z0-9_]。
+    var regex11 = /\w/;  // 只要含有字母、数字和下划线即可匹配成功
+    console.log(regex11.test('_'));  // true
+    console.log(regex11.test('123?!...'));  // true
+
+    // 12.简写方式(\W)：除所有字母、数字和下划线以外的字符，相当于[^A-Za-z0-9_]。
+    var regex12 = /\W/;  // 必须含有字母、数字和下划线以外的字符
+    console.log(regex12.test('abc123'));  // false
+    console.log(regex12.test('abc123!'));  // true
+
+    // 13.次数匹配({})：模式的精确匹配次数，使用大括号（{}）表示。{n}表示恰好重复n次，{n,}表示至少重复n次，{n,m}表示重复不少于n次，不多于m次。
+    var regex13 = /lo{2}k/;  // 表示o必须只能出现两次
+    console.log(regex13.test('lok'));  // false
+    console.log(regex13.test('look'));  // true
+    console.log(regex13.test('loook'));  // false
+    console.log(regex13.test('lookkk'));  // true
+    console.log(regex13.test('lokokkk'));  // false
+
+    var regex14 = /lo{2,}k/;  // 表示o至少需要出现两次
+    console.log(regex14.test('lok'));  // false
+    console.log(regex14.test('look'));  // true
+    console.log(regex14.test('loook'));  // true
+
+    var regex15 = /lo{2,5}k/;  // 表示o至少需要出现两次，至多只能出现5次
+    console.log(regex15.test('looook'));  // true
+
+    // 14.量词符(?)：问号表示某个模式出现0次或1次，等同于{0, 1}。
+    var regex16 = /lo?k/;  // 表示o只能出现0次或1次
+
+    // 15.量词符(*)：星号表示某个模式出现0次或多次，等同于{0,}。
+    var regex17 = /lo*k/; // 表示o可以出现0次或多次，即任意次数都行
+
+    // 16.量词符(+)：加号表示某个模式出现1次或多次，等同于{1,}。
+    var regex18 = /lo+k/; // 表示o可以出现1次或多次
+
+
+
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>

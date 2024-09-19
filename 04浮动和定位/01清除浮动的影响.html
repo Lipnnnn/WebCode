@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动的影响</title>
+</head>
+<body>
+<!--
+清除浮动的影响：
+如果父元素不设置高度，默认高度由内容撑开，当子元素浮动后，在页面中不占据位置，这时候父元素的高度会坍塌，对后面的元素会产生影响。
+
+清除浮动影响的方法：
+1）给浮动元素的父元素设置高度（高度已知）
+2）浮动元素的父元素加overflow: hidden/auto; （自动找高，加了overflow属性后元素开启了BFC格式:块级格式上下文,就是变为独立的一块,子元素不会再布局上影响父元素）
+   具体来说，当设置了 overflow: hidden 后，超出元素尺寸范围的内容将被隐藏起来，不会显示在页面上。这会导致超出部分被裁剪掉，并不会对页面布局造成影响。
+3）受影响的元素加clear: left/right/both;(父元素的高度没有找到)
+4）空div法(页面新增很多空div元素)
+   浮动元素后加一个空div
+   空div{clear:both;}
+5）伪对象法
+   浮动元素的父元素::after{
+                    content:"";
+                    display:block;
+                    clear:both;
+                  }
+-->
+</body>
+</html>

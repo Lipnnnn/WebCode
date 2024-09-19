@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this关键字</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+
+    <script>
+        /*
+            this关键字：this指向调用者，找到调用者
+            1. 对象中的this关键字
+            2. 闭包中的this关键字
+            3. 定时器中的this关键字
+            4. 事件中的this关键字
+        */
+
+        // 对象
+        var info = {
+            name:"iwen",
+            getName(){
+                // this 代表当前info对象
+                console.log(this.name);
+                console.log(this === info);
+            }
+        }
+
+        info.getName();
+
+        // 闭包
+        // 在闭包中，this对象是在运行时基于当前执行环境绑定的。谁调用this指向谁
+        var username = 'iwen';
+        var user = {
+            username:"ime",
+            getName:function(){
+                return function(){
+                    // 全局环境  this === window
+                    console.log(this === window);
+                    return this.username;
+                }
+            }
+        }
+        console.log(user.getName()());
+
+
+        // 定时器
+        var myTime = 1000;
+        var timer = {
+            myTime:2000,
+            getTime:function(){
+                setTimeout(function(){
+                    // 定时器中的this，指向window
+                    console.log(this.myTime);
+                },10)
+            }
+        }
+
+        timer.getTime();
+
+
+        // 事件中的this
+        var btn = document.getElementById("btn");
+        btn.onclick = function(e){
+            console.log(this === e.target);
+            console.log(this === e.currentTarget);
+            console.log(this);
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>递归算法</title>
+
+  <script>
+
+    /*
+        递归三要素：
+        1.一个问题的解可以分解为几个更小的同一题的解。
+        2.分解后的子问题只存在数据不一样的问题。
+        3.存在递归终止条件。
+     */
+
+    // 递归实现阶乘！
+    function sum(num){
+      if(num <= 1){
+        return 1;
+      }else {
+        return num * sum(num-1);
+      }
+    }
+
+    console.log(sum(5));
+
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>

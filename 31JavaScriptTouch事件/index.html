@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Touch事件</title>
+  <style>
+    .box{
+      width: 100px;
+      height: 100px;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box" id="box"></div>
+
+  <script>
+  /*
+      touch事件：用在移动端的，不是PC，必须使用DOM2级事件处理程序
+          1. touchstart
+          2. touchend
+          3. touchmove
+          4. touchcancel
+  */
+
+  var box = document.getElementById("box");
+  box.addEventListener("touchend",function(){
+    console.log("抬起来了");
+  })
+
+  box.addEventListener("touchstart",function(e){
+    console.log("触摸屏幕",e);
+  })
+
+  box.addEventListener("touchmove",function(){
+    console.log("移动");
+  })
+
+</script>
+
+</body>
+</html>

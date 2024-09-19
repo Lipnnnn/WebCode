@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            display: grid;
+            width: 600px;
+            height: 300px;
+            border: 5px solid gainsboro;
+            background-color: white;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 20px;
+            padding: 10px 20px;
+        }
+        .box1{
+            background-color: #ff64a6;
+            grid-column: 1/3;
+            grid-row: 1/3;
+        }
+        .box2{
+            background-color: #ebce6b;
+        }
+        .box3{
+            background-color: #e77b2e;
+        }
+        .box4{
+            background-color: #5f5750;
+            grid-column: 3/4;
+            grid-row: 2/4;
+        }
+        .box5{
+            background-color: #1D8B6D;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+    <div class="box4">4</div>
+    <div class="box5">5</div>
+</div>
+
+</body>
+</html>

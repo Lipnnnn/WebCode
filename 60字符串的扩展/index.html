@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串的扩展</title>
+</head>
+<body>
+<script>
+    /*
+        字符串的扩展：
+        1. ES6 加强了对 Unicode 的支持，允许采用\uxxxx形式表示一个字符，其中xxxx表示字符的 Unicode 码点。
+        2. ES6增加了一个遍历字符串的语法，`for...of`循环遍历
+           for(let ch of 'foo'){
+                console.log(ch);  // "f"  // "o"  // "o"
+           }
+        3. 模板字符串：
+           一段字符串外面使用反引号` `包起来，里面使用${}，就能访问到变量了。
+           let count = 5;
+           `这是一个count，值为${count}`;
+        4. 字符串的新增方法：
+           includes()：返回布尔值，表示是否找到了参数字符串。
+     */
+
+    // 模板字符串（一定要记得外面使用 反引号 包起来
+    let count = 5;
+    console.log(`这是一个count，值为${count}`);  // 这是一个count，值为5
+
+    // includes()
+    let judge = 'hello'.includes('h');
+    console.log(judge);  // true
+
+</script>
+</body>
+</html>

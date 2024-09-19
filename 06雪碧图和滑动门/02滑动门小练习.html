@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滑动门</title>
+    <style>
+        /*
+        思路:
+        1) 将元素绝对定位到需要的位置
+        2) display: none;  隐藏自己
+        3) display: block;  显示出来
+        */
+
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        a{
+            /*去掉下划线*/
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+        li{
+            /*去掉li的小圆点*/
+            list-style-type: none;
+            margin-top: 5px;
+        }
+
+        .box{
+            width: 800px;
+            height: 300px;
+            background-color: #ebce6b;
+            margin: 20px auto;
+        }
+        .box2{
+            width: 200px;
+            height: 300px;
+            background-color: #e77b2e;
+            padding: 15px 30px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .box3{
+            width: 600px;
+            height: 300px;
+            background-color: pink;
+            position: absolute;
+            top: 0;
+            left: 200px;
+            display: none;
+        }
+        li:hover .box3{
+            display: block;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="box2">
+        <ul>
+            <li>
+                <a href="#">手机 电话卡</a>
+                <div class="box3">1</div>
+            </li>
+            <li>
+                <a href="#">手机 电话卡</a>
+                <div class="box3">2</div>
+            </li>
+            <li><a href="#">手机 电话卡</a></li>
+            <li><a href="#">手机 电话卡</a></li>
+            <li><a href="#">手机 电话卡</a></li>
+            <li><a href="#">手机 电话卡</a></li>
+            <li><a href="#">手机 电话卡</a></li>
+            <li><a href="#">手机 电话卡</a></li>
+            <li><a href="#">手机 电话卡</a></li>
+            <li><a href="#">手机 电话卡</a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

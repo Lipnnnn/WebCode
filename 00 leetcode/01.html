@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<script>
+    var generateMatrix = function(n) {
+        var start = 0;
+        var offset = 1;
+        var i,j;
+        var x = Math.floor(n/2);  // 表示要转多少圈
+        var count = 1;
+        var ans = new Array(n).fill(0).map(()=>new Array(n).fill(0));
+        while (x--){  // x表示要转多少圈
+            // 这里面写4个for循环
+
+            // 第一个：遍历最上面一行（不包括最后一个数）
+            for(j=start;j<n-offset;j++){
+                ans[start][j] = count++;
+            }
+
+            // 第二个：遍历最右边一列
+            for(i=start;i<n-offset;i++){
+                ans[i][j] = count++;  // 因为此时j表示的就是最右边的一列
+            }
+
+            // 第三个：遍历最下边一行
+            for(;j>start;j--){  // j从最右边一列变到最左边一列来
+                ans[i][j] = count++;  // 因为此时i表示的就是最下边的一行
+            }
+
+            // 第四个：遍历最左边一列
+            for(;i>start;i--){  // i从最下边一行变到最上边一行来
+                ans[i][j] = count++;  // 因为此时j表示的就是最左边一列
+            }
+
+            // 最后，遍历了一圈之后，要更新初始位置，和结束位置
+            start++;
+            offset++;
+        }
+        // 还需要额外判断一下n为奇数的情况，n为奇数需要给最中间的数赋值
+        if(n % 2 !== 0){
+            ans[start][start] = count;
+        }
+
+        // 最后将二维数组返回
+        return ans;
+    };
+
+    console.log(generateMatrix(3));
+</script>
+</body>
+</html>

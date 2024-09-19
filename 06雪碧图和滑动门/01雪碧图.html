@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        1、雪碧图  css精灵  css sprite
+        1）定义
+        雪碧图是一项图片整合技术
+        把许多小图放到一张大图上面
+
+        2）优点
+        ①减少页面http请求
+        ②减少图片字节
+        ③减少命名困扰
+
+        3）原理
+        background-image:;
+        background-position:;
+
+
+        */
+        .box1{
+            width: 200px;
+            height: 50px;
+            background-image: url("spirite.png");
+
+        }
+        .box2{
+            width: 65px;
+            height: 65px;
+            background-image: url("spirite.png");
+            background-position: -378px 0;
+        }
+        .box3{
+            width: 118px;
+            height: 37px;
+            background-image: url("spirite.png");
+            background-position: -393px -451px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+</body>
+</html>

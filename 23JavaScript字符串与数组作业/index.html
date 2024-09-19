@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串与数组作业</title>
+    <!--   第六题很重要！！！！  -->
+  <script>
+    // 1.字符串反序
+    var str1 = "abcdefg";
+    var str2 = "";
+    for(var i=str1.length-1;i>=0;i--){
+        str2 += str1.charAt(i);
+    }
+    console.log(str2);
+
+    // 2.将一段字符串变成驼峰命名法
+    var str3 = "hello-world";
+    var arr = str3.split("-");
+    console.log(arr);
+    var newArr = arr[0]+"";
+    for(var j=1;j<arr.length;j++){
+        newArr += arr[j].charAt(0).toUpperCase() + arr[j].substring(1);
+        // arr[j].charAt(0).toUpperCase()：表示把world中的w变成大写；
+        // arr[j].substring(1)：表示再加上orld这几个字母；
+    }
+    console.log(newArr);
+
+    // 3.二维数组转化一维数组
+    var arr2 = [1,2,[3,4],5,[6,7],8,9];
+    var newArr2 = [];
+    for(var ii=0;ii<arr2.length;ii++){
+        if(Array.isArray(arr2[ii])){  //如果它是数组
+            for(var jj=0;jj<arr2[ii].length;jj++){
+                newArr2.push(arr2[ii][jj]);
+            }
+        }else {
+            newArr2.push(arr2[ii]);
+        }
+    }
+    console.log(newArr2);
+
+    // 4.数组去重
+    var arr3 = [1,1,3,2,4,5,6,6,1,6];
+    var arr4 = [];
+    for(var iarr3=0;iarr3<arr3.length;iarr3++){
+        var x = arr3[iarr3];
+        if(arr4.indexOf(x) === -1){
+            arr4.push(x);
+        }
+    }
+    console.log(arr4);
+
+    // 5.数组排序
+    var arr5 = [29,45,51,68,12,7];
+    for(var k=0;k<arr5.length-1;k++){
+        for(var kk=k+1;kk<arr5.length;kk++){
+            if(arr5[kk]<arr5[k]){
+                var temp = arr5[kk];
+                arr5[kk] = arr5[k];
+                arr5[k] = temp;
+            }
+        }
+    }
+    console.log(arr5);
+
+    // 6.找出出现最多的字母，找出字符串中出现次数最多的字母！！！！！！！！！！！！！！！！！！（标准答案）
+    var str = 'abcoefoxyozzopp';
+    var obj = {}; //创建一个对象
+    var num = 0; //统计出现次数；
+    var index = ''; //统计出现最多字符
+    var name = ''; //一个个记录出现的字符
+    for (var i = 0; i < str.length; i++) {
+        name = str.charAt(i); //得到的字符赋予name
+        if (name in obj) { //如果name里存着的字符在obj对象里
+            obj[name]++; //如果name变量中存着的是a字符，则obj.a 自加
+        } else {
+            obj[name] = 1; //如果查找到的name中存的字符没有在obj对象中，则将其添加到obj对象中，数量变为1
+        }
+    }
+    console.log(obj);
+    // 遍历对象
+    for (var key in obj) {
+        if (num < obj[key]) {
+            num = obj[key]; //num得到出现最多的次数
+            index = key; //将出现最多的属性值（即字符）赋给index
+        }
+    }
+    console.log('该字符串中出现最多的字符为：' + index + '\n出现的次数为：' + num);
+
+    // 6.找出字符串中出现次数最多的字母（自己写的！！！！）
+    var str = "abcoefoxyozzopp";
+    var obj = {};
+    for(var q=0;q<str.length;q++){
+        var ch = str.charAt(q);
+        if(ch in obj){  // 判断它是否存在于集合里面，使用in
+            obj[ch]++;
+        }else {
+            obj[ch] = 1;
+        }
+    }
+    console.log(obj);
+    var array = Object.keys(obj);
+    var max = obj[array[0]];
+    var maxZ = "";
+    for(var key in array){  // 注意：这里的key表示的是数组的下标，而并非是数组的每一个值，所以取数组的值需要写成array[key]
+        if(obj[array[key]] > max){
+            max = obj[array[key]];
+            maxZ = array[key];
+        }
+    }
+    console.log("出现次数最多的字母为：" + maxZ + "，出现的次数是" + max);
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

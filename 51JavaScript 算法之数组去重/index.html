@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+
+    <script>
+
+        /*
+            数组去重有两种方法：
+         */
+
+        // 方法一：利用数组的indexOf方法去重
+        function unique(arr){
+            var newArr = [];
+            for(var i=0;i<arr.length;i++){
+                if(newArr.indexOf(arr[i]) === -1){  // 判断newArr数组中是否存在arr[i]这个数，如果不存在则会返回-1
+                    // 新数组不存在这个数，就添加进去
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+        }
+
+        var arr = [3,3,65,23,4,23,3,65,9];
+        console.log(unique(arr));
+
+        // 方法二：利用ES6中的 Set 方法去重
+        // Set：是一个不允许出现重复元素的集合
+        // var set = new Set();
+        function unique2(arr){
+            // return new Set(arr);  // 这样得到的是一个Set集合
+            // Array.from()可以把类数组转化为真实的数组
+            return Array.from(new Set(arr));  // 这样就能得到一个数组了，与方法一的效果是一样的
+        }
+
+        console.log(unique2(arr));
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

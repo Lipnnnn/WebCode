@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            display: grid;
+            width: 300px;
+            height: 300px;
+            border: 5px solid gainsboro;
+            background-color: white;
+            border-radius: 10px;
+
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-auto-flow: row dense;
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+            /*grid-template-rows:1fr 2fr;*/
+            grid-template-areas: 'header header header'
+                                  'main main sidebar'
+                                  'footer footer footer';
+            /*justify-items: center;*/
+            /*align-items: center;*/
+            justify-content: space-evenly;
+            align-content: space-evenly;
+            justify-items: center;
+            grid-template-rows: 100px 100px 100px;
+            grid-template-columns: 100px 100px 100px;
+            grid-auto-rows: 50px;
+
+        }
+        .box div{
+            /*width: 100px;*/
+            /*height: 100px;*/
+        }
+        .box1{
+            background-color: #ff64a6;
+            /*grid-column-start: span 2;*/
+            /*grid-column-end: 4;*/
+            /*grid-row-start: span 2;*/
+            /*grid-row-end: 3;*/
+            grid-column: 2/4;
+            grid-row: 1/3;
+        }
+        .box2{
+            background-color: #26b90f;
+        }
+        .box3{
+            background-color: #6490ff;
+        }
+        .box4{
+            background-color: #aa64ff;
+        }
+        .box5{
+            background-color: #64d0ff;
+        }
+        .box6{
+            background-color: #ff7164;
+        }
+        .box7{
+            background-color: #b97591;
+        }
+        .box8{
+            background-color: #ffce64;
+        }
+        .box9{
+            background-color: #1c6e13;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+    <div class="box4">4</div>
+    <div class="box5">5</div>
+    <div class="box6">6</div>
+    <div class="box7">7</div>
+    <div class="box8">8</div>
+    <div class="box9">9</div>
+</div>
+
+</body>
+</html>

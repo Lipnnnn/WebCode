@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex布局详解</title>
+  <style>
+    div{
+      /*在父元素中添加flex属性*/
+      display: flex;
+      width: 600px;
+      height: 300px;
+      background-color: #ebce6b;
+      /*!*设置主轴的方向*!*/
+      /*flex-direction: row;*/
+      /*!*设置主轴上的子元素排列方式*!*/
+      /*justify-content: space-between;*/
+      /*!*设置子元素是否换行*!*/
+      flex-wrap: wrap;
+      /*!*设置侧轴上的子元素排列方式（单行）*!*/
+      /*!*align-items: stretch;*!*/
+      /*!*设置侧轴上的子元素排列方式（多行）*!*/
+      /*  align-content: stretch;*/
+    }
+    span{
+      /*width: 150px;*/
+      height: 100px;
+      background-color: #ff64a6;
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+<!--
+1. 任何一个容器都可以指定为flex布局。（div、span ...）
+2. 当我们为父盒子设置为flex布局后，子元素的float、clear和vertical-align属性会失效
+3. flex布局原理：就是通过给【父盒子】添加flex属性，来控制【子盒子】的位置和排列方式
+
+4. 写在父元素上的属性：
+   ① 【flex-direction】：设置主轴的方向
+      row              ---   从左到右（默认值）
+      row-reverse      ---   从右到左
+      column           ---   从上到下
+      column-reveres   ---   从下到上
+   ② 【justify-content】：设置主轴上的子元素排列方式
+      flex-start       ---   从头部开始排列，如果主轴是x轴，则从左到右排列（默认值）
+      flex-end         ---   从尾部开始排列
+      center           ---   在主轴居中对齐（如果主轴是x轴则水平居中）
+      space-around     ---   平分剩余空间
+      space-between    ---   先两边贴边，再平分剩余空间（重要！！！）
+   ③ 【flex-wrap】：设置子元素是否换行
+      默认情况下，子元素都排在一条线（又称'轴线'）上，如果放不下，就会缩小子元素的宽高，装入父元素中
+      nowrap           ---    不换行（默认值）
+      wrap             ---    换行
+   ④ 【align-items】：设置侧轴上的子元素排列方式（只能设置单行！）
+      flex-start       ---    从上到下（默认值）
+      flex-end         ---    从下到上
+      center           ---    垂直居中
+      stretch          ---    拉伸（使用这个属性时，不能给子元素设置高度）
+   ⑤ 【align-content】：设置侧轴上的子元素排列方式（只能设置多行！）
+      flex-start       ---    在侧轴的头部开始排列（默认值）
+      flex-end         ---    在侧轴的尾部开始排列
+      center           ---    在侧轴中间显示
+      space-around     ---    子项在侧轴平分剩余空间
+      space-between    ---    子项在侧轴先分布在两头，再平分剩余空间
+      stretch          ---    设置子项元素高度平分父元素高度
+   ⑥ 【flex-flow】：是flex-direction和flex-wrap的复合属性
+      flex-flow: row wrap;
+
+5. 写在子元素上的属性：
+   ① 【flex】：定义子元素分配父元素的剩余空间，用flex来表示占比多少份数
+      flex: 数字
+   ② 【align-self】：控制子元素自己的侧轴上的排列方式
+   ③ 【order】：定义子元素的排列顺序
+
+-->
+
+<div>
+  <span>1</span>
+  <span>2</span>
+  <span>3</span>
+</div>
+
+</body>
+</html>

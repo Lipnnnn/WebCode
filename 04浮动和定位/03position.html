@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+  /*
+    position  元素定位
+    属性值：
+    1）static  默认值  静态定位
+
+    2）relative  相对定位
+    相对于自己原位置定位
+    定位后原位置保留
+    配合left、right、top、bottom移动
+    当top、bottom、left、right同时存在,left和top的优先级大于right和bottom
+    当取正值,元素往右下移动;当取负值,元素往左上移动
+
+    应用场景：
+    ①自己小范围移动
+    ②配合绝对定位使用
+
+    3）absolute  绝对定位
+    相对于已经定位(static除外)的父元素定位,如果父元素没有定位,逐级往上找,最后相对于body定位
+    定位后原位置不保留
+    配合left、right、top、bottom移动
+    元素绝对定位后转换为块级元素
+
+    应用场景：
+    ①形成独立的一层
+
+
+    4）fixed  固定定位
+    相对于浏览器窗口定位
+    定位后原位置不保留
+    配合left、right、top、bottom移动
+    元素固定定位后转换为块级元素
+
+    应用场景：
+    ①固定在页面某个位置
+
+    4、z-index:number;  堆叠顺序
+    取值越大,层级越往上
+    可以去负值
+    默认值auto
+    必须配合定位使用(static除外)
+
+  */
+    body{
+      height: 3000px;
+    }
+    .box{
+      width: 1000px;
+      height: 500px;
+      background-color: deepskyblue;
+      margin: 50px;
+      position: relative;
+    }
+    .one{
+      width: 150px;
+      height: 150px;
+      background-color: palegoldenrod;
+      /*position: relative;*/
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      z-index: 700;
+    }
+    .two{
+      width: 150px;
+      height: 150px;
+      background-color: plum;
+      position: relative;
+      z-index: 666;
+    }
+    a{
+      position: fixed;
+      right: 10px;
+      bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <div class="one"></div>
+  <div class="two"></div>
+</div>
+<a href="#">返回定位</a>
+</body>
+</html>

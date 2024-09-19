@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+    <script>
+        /*
+            函数声明的格式：
+            格式一：（推荐使用这种方式！）
+                function add(可选参数){
+                    函数体;  //语句
+                    return 值;  //可选
+                }
+            格式二：
+                var add = function(参数){
+                    // 语句
+                }
+         */
+
+        // 递归调用函数实现5的阶乘
+        function fun(num){
+            if(num===1){
+                return 1;
+            }else {
+                return num*fun(num-1);
+            }
+        }
+        console.log(fun(5));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

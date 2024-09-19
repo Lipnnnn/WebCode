@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+  <script>
+    /*
+        什么是对象？
+        对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合。
+    */
+
+    /*
+      对象的格式：
+            var obj = {
+                key:value
+            }
+
+            var obj = {
+                "key":value
+            }
+     */
+    var obj = {
+      name: "iwen",
+      age: 20,
+      "360buy": "京东",
+      getName: function(){
+        return "ime";
+      }
+    }
+
+    /*
+        对象的调用：
+          1.链式调用（只能获取静态的！！！）
+          2.按照数组的形式调用（获取动态的！比如变量）
+     */
+    console.log(obj.name);
+    console.log(obj.getName());
+    console.log(obj["360buy"]);
+
+    /*
+        对象的每一个键名又称为“属性”（property）
+        查看所有属性：使用Object.keys方法。
+     */
+    console.log(Object.keys(obj));  // 查看obj对象的所有键
+
+    /*
+        delete 命令：
+        用于删除对象的属性，删除成功后返回true。
+     */
+    delete obj.name;
+    console.log(obj.name);
+    console.log(Object.keys(obj));
+
+    // 往对象里添加数据
+    // 直接：obj[key] = value;
+    obj["sex"] = "男";
+    console.log(obj)
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

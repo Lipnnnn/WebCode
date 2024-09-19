@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则概述和方法</title>
+
+  <script>
+    /*
+        1.新建正则表达式有两种方法：
+     */
+    // 方法一：
+    var regex = /xyz/;
+    // 方法二：
+    var regex2 = new RegExp('xyz');
+
+    /*
+        2.正则对象的两个属性：
+     */
+    // ① lastIndex：返回一个数值，表示下一次开始搜索的位置。该属性可读写，但是只在进行连续搜索时有意义。
+    console.log(regex.lastIndex);  // 0
+    // ② source：返回正则表达式的字符串形式（不包括反斜杠），该属性只读
+    console.log(regex.source);  // xyz
+
+    /*
+        3.RegExp.prototype.test()方法：正则实例对象的test方法返回一个布尔值，表示当前模式是否能匹配参数字符串。
+     */
+    var regex3 = /cat/;
+    var str = 'cat and dog';
+    // regex3.test(str)：验证str字符串中是否包含'cat'
+    console.log(regex3.test(str));  // true
+
+    /*
+        4.RegExp.prototype.exec()方法：正则实例对象的exec方法，用来返回匹配结果。如果发现匹配，就返回一个数组，成员是匹配成功的子字符串，否则返回null。
+     */
+    console.log(regex3.exec(str)[0]);  // cat
+    console.log(regex3.exec(str));  // 返回一个数组
+    // 返回数组还包含以下两个属性：
+    // input：整个原字符串。index：整个模式匹配成功的开始位置（从0开始计数）。
+    console.log(regex3.exec(str).input);  // cat and dog
+    console.log(regex3.exec(str).index);  // 0
+
+    /*
+        5.String.prototype.match()方法：字符串实例对象的match方法对字符串进行正则匹配，返回一个数组，成员是所有匹配的子字符串。
+          字符串的match方法与正则对象的exec方法非常类似：匹配成功返回一个数组，匹配失败返回null。
+     */
+    var str2 = 'let cats and dogs and dog';
+    var regex4 = /dog/;
+    console.log(str2.match(regex4)[0]);  // dog
+    console.log(str2.match(regex4));  // 返回一个数组，跟exec()方法差不多
+    var regex5 = /dog/g;  // g修饰符表示搜索全部的'dog'，如果没加g修饰符，是搜索到第一个'dog'就停止搜索了
+    console.log(str2.match(regex5));  // ['dog', 'dog']
+
+    /*
+        6.String.prototype.replace()方法：字符串对象的replace方法可以替换匹配的值。它接受两个参数，第一个是正则表达式，表示搜索模式，第二个是替换的内容
+          第一个参数表示需要被替换的内容，第二个参数是新的内容
+     */
+    var str3 = 'abcabc';
+    var regex6 = /a/;
+    var regex7 = /a/g;
+    console.log(str3.replace(regex6, 'b'));  // bbcabc （只把第一个a替换成了b）
+    console.log(str3.replace(regex7, 'b'));  // bbcbbc （把所有的a都替换成了b）
+
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>

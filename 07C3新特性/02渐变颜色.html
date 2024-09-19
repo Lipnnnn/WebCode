@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    /*
+    背景渐变
+    1）属性
+    background-image:;
+    简写：background:;
+    2）属性值
+    ①线性渐变
+    background-image:linear-gradient(方向,颜色1,颜色2,..);
+    注意：
+    方向可以省略,默认从上往下渐变
+    方向的取值（两种方式）：
+    a、关键词  to right,to top,to right bottom等
+    b、角度  deg(弧度)
+
+    ②径向渐变
+    background-image:radial-gradient(渐变的中心点,渐变的形状,颜色1,颜色2,...);
+    注意：
+    a、渐变的中心点默认为宽高的一半
+    可以设置top tight left bottom
+    注意兼容性问题
+
+    b、渐变的形状默认为椭圆
+    可以设置为circle
+
+    */
+    .box{
+      width: 1200px;
+      height: 600px;
+      border: 5px solid #000;
+      /*background-image: linear-gradient(-120deg,red,orange,yellow,green,blue,purple);*/
+      background-image: -webkit-radial-gradient(top,circle,red,orange,yellow,green);
+      background-image: -moz-radial-gradient(top,circle,red,orange,yellow,green);
+      background-image: -o-radial-gradient(top,circle,red,orange,yellow,green);
+      background-image: -ms-radial-gradient(top,circle,red,orange,yellow,green);
+      background-image: radial-gradient(top,circle,red,orange,yellow,green);
+    }
+    .box1{
+      width: 60px;
+      height: 60px;
+      background-image: linear-gradient(120deg,#ff3149,#ff64a6);
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+<div class="box1"></div>
+</body>
+</html>

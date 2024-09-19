@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        transform 转换 变型
+        1）作用
+        使元素在位置或者形状上发生一定的改变
+
+        2）属性
+        transform:translate() rotate() scale() skew();
+                  位移         旋转      缩放     倾斜
+
+        3）属性值
+        ①位移  单位px  %
+        transform:translate(x,y);
+        当只取一个值,表示水平方向移动的距离
+        当取两个值,表示水平方向和垂直方向移动的距离
+
+        取正值,往右下移动;取负值,往左上移动
+
+        transform:translateX();
+        transform:translateY();
+
+        3D位移：
+        transform:translate3D(x,y,z);
+
+        ②旋转  单位deg(弧度)
+        transform:rotate(30deg);
+        取正值,顺时针旋转
+        取负值,逆时针旋转
+
+        默认元素的中心点为元素的正中心,宽高的一半
+        可以通过transform-origin:; 修改元素的中心点
+
+        ③缩放  取值number  取值0-1：缩小  >1:放大  默认1
+        transform:scale(x,y);
+        当只取一个值,等比例缩放
+        当只取两个值,表示水平方向和垂直方向
+
+        transform:scaleX();
+        transform:scaleY();
+
+        ④倾斜 单位deg
+        transform:skew(x,y);
+        当只取一个值,表示水平方向倾斜的弧度
+        当取两个值,表示水平方向和垂直方向倾斜的弧度
+
+        transform:skewX();
+        transform:skewY();
+
+        */
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 100px;
+            /*transform-origin: right bottom;*/
+        }
+        .box:hover{
+            /*transform: translate(-20px,-30px);*/
+            /*transform: translateX(50px);*/
+            /*transform: translateY(50px);*/
+            /*transform: translate3d(50px,50px,0);*/
+
+            /*transform: translate(50px,50px) rotate(-60deg);*/
+
+            /*transform: scale(1.5,.8);*/
+            /*transform: scaleX(1.5);*/
+            /*transform: scaleY(1.5);*/
+
+            transform: skew(30deg,40deg);
+        }
+    </style>
+</head>
+<body>
+<div class="box">哈哈</div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+/*导航栏样式开始*/
+.nav{
+    width: 100%;
+    height: 60px;
+    background-color: #017E5C;
+    /*在父元素上开启弹性盒模型*/
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.city{
+    width: 65px;
+    height: 60px;
+    background-color: #F2BD47;
+    font-size: 14px;
+    color: white;
+    line-height: 60px;
+}
+.city>a{
+    font-size: 12px;
+    color: white;
+}
+.title{
+    height: 60px;
+    /*background-color: #e77b2e;*/
+    /*让该元素占父元素剩余位置的全部*/
+    flex-grow: 1;
+    line-height: 60px;
+}
+.title>h1{
+    font-size: 18px;
+    color: white;
+    font-weight: normal;
+}
+.search{
+    width: 40px;
+    height: 60px;
+    /*background-color: #ff64a6;*/
+    line-height: 60px;
+}
+.search>i{
+    color: white;
+    font-size: 20px;
+}
+/*导航栏样式结束*/
+
+/*banner样式开始*/
+.banner{
+    position: relative;
+    margin-top: 60px;
+}
+.banner img{
+    width: 100%;
+}
+.banner_box{
+    width: 100%;
+    height: 5%;
+    /*background-color: #ff64a6;*/
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+}
+.banner_box>ul{
+    width: 60%;
+    height: 100%;
+    /*background-color: #ff64a6;*/
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.banner_box>ul>li{
+    width: 18%;
+    height: 100%;
+    background-color: #017E5C;
+}
+/*banner样式结束*/
+
+/*消息样式开始*/
+.message{
+    height: 30px;
+    width: 100%;
+    background-color: #eee;
+    margin-top: 5px;
+    text-align: left;
+}
+.message>i{
+    font-size: 22px;
+    color: #1D8B6D;
+    margin-left: 10px;
+}
+.message>span{
+    font-size: 12px;
+    color: #010000;
+}
+/*消息样式结束*/
+
+/*menu样式开始*/
+.menu{
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 10px;
+    /*background-color: #ff64a6;*/
+}
+.menu ul{
+    width: 100%;
+    height: 100%;
+}
+.menu li{
+    width: 25%;
+    height: 100%;
+    /*background-color: #e77b2e;*/
+    float: left;
+}
+.menu img{
+    width: 45px;
+    height: 45px;
+    margin: 5px 0 10px;
+}
+.menu p{
+    font-size: 14px;
+    color: #a6a6a6;
+}
+.menu .active{
+    color: #017E5C;
+}
+/*menu样式结束*/
+
+/*主体样式开始*/
+.content_title{
+    width: 100%;
+    font-size: 16px;
+    color: #017E5C;
+    background-color: #eee;
+    text-align: left;
+    padding-left: 10px;
+}
+.content{
+    width: 100%;
+    padding: 10px 10px 70px;
+}
+.content_up{
+    height: 80px;
+    width: 100%;
+    background-color: white;
+    /*在父元素上开启弹性盒模型，让子元素水平排列*/
+    display: flex;
+}
+.content_up>img{
+    width: 70px;
+    height: 70px;
+    margin: 5px 15px 5px 5px;
+}
+.content_up_message{
+    text-align: left;
+    margin-top: 10px;
+}
+.content_up_message>p:nth-child(2){
+    font-size: 14px;
+}
+.content_up_message>p:nth-child(3){
+    color: red;
+    letter-spacing: -2px;
+}
+.content_up_message>p:nth-child(3)>i:last-child{
+    color: #eee;
+}
+.content_down{
+    height: 30px;
+    color: #a6a6a6;
+    background-color: #eee;
+    line-height: 30px;
+    text-align: left;
+}
+/*主体样式结束*/
+
+/*页脚样式开始*/
+.footer{
+    width: 100%;
+    height: 60px;
+    background-color: #eee;
+    /*开启弹性盒模型，使子元素水平排列*/
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.footer_box{
+    /*设置子元素占父元素剩余空间的比例：1:1:1:1*/
+    flex-grow: 1;
+    padding: 5px 0;
+    color: #a6a6a6;
+}
+.footer i{
+    font-size: 20px;
+}
+.footer p{
+    font-size: 18px;
+}
+.footer .footer_box:first-child{
+    color: white;
+    background-color: #017E5C;
+}
+/*页脚样式结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

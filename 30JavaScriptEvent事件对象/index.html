@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event事件对象</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="divBtn">
+        <button id="btn">按钮</button>
+    </div>
+
+    <a href="http://iwenwiki.com" id="abtn">iwen</a>
+
+    <div id="box">
+        <button id="btn2">按钮2</button>
+    </div>
+    <button id="btn3">按钮3</button>
+
+    <script>
+        /*
+            Event对象：（常用！需要掌握！！！）
+                1. 常用属性
+                    Event.currentTarget
+                    Event.target
+                    Event.type
+                2. 常用方法
+                    1. Event.preventDefault()
+                    2. Event.stopPropagation()
+
+            currentTarget和targe的区别
+                currentTarget: 永远指向当前事件的监听者，永远不会改变
+                target:实际的事件的触发者，有可能变化的，事件触发存在冒泡问题
+
+        */
+
+        var btn = document.getElementById("btn");
+        var divBtn = document.getElementById("divBtn");
+
+        // 没有事件冒泡的情况下，currentTarget和target是一致的
+        btn.onclick = function(e){
+            console.log(e.currentTarget);
+            console.log(e.target);
+        }
+
+        // 存在事件冒泡
+        divBtn.onclick = function(e){
+            console.log(e.currentTarget); // 指向事件的监听者
+            console.log(e.target); // 指向事件触发者
+        }
+
+        var abtn = document.getElementById("abtn");
+        abtn.onclick = function(e){
+            e.preventDefault(); // 阻止默认事件
+            console.log("点击A标签");
+        }
+
+        var box = document.getElementById("box");
+        var btn2 = document.getElementById("btn2");
+        box.onclick = function(){
+            console.log("div");
+        }
+        btn2.onclick = function(e){
+            e.stopPropagation(); // 阻止事件冒泡
+            console.log("btn2");
+        }
+
+        var btn3 = document.getElementById("btn3");
+        btn3.onclick = function(e){
+            console.log(e);
+            e.target.innerHTML = "新的按钮文本"
+            e.target.style.height = '100px'
+        }
+
+    </script>
+
+</body>
+</html>

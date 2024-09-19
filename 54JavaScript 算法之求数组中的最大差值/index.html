@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>求数组中的最大差值</title>
+
+  <script>
+
+    // 使用ES6的方式：
+    function getArrMaxDiffer(arr){
+      // (...)运算符：展开数组。 [1,2,3,4,5] -> 1,2,3,4,5
+      var maxNum = Math.max(...arr);
+      var minNum = Math.min(...arr);
+      console.log(maxNum);
+      console.log(minNum);
+      return maxNum - minNum;
+    }
+
+    var arr = [1,2,3,4,5];
+    console.log(getArrMaxDiffer(arr));
+
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>

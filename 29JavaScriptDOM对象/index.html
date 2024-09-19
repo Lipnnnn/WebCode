@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body id="body">
+<div id="div1">我是div</div>
+
+<script>
+  var newNode = document.createElement('p');
+  var newText = document.createTextNode('我是p');
+  newNode.appendChild(newText);
+  var node = document.getElementById("body");
+  var node2 = document.getElementById("div1");
+  node.insertBefore(newNode,node2);
+
+  var node3 = document.getElementsByTagName("html");
+
+  console.log(document.nodeType);
+</script>
+
+</body>
+</html>

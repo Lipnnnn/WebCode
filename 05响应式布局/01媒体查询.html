@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--快捷键：meta:vp + Tab键-->
+    <!--适配移动端  移动端设备优先 （涉及到移动端都需要加上这句代码）!!!-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+        /*
+        1、媒体查询
+        1）作用
+        实现响应式布局
+        2）语法
+        ①内部引入
+        //移动端
+        @media screen and (max-width:768px){}
+        //iPad端
+        @media screen and (max-width:992px) and (min-width:768px){}
+        //pc端
+        @media screen and (min-width:992px){}
+
+        ②外部引入
+        //移动端
+        <link rel="stylesheet" href="" media="screen and (max-width:768px)"/>
+        //ipad端
+        <link rel="stylesheet" href="" media="screen and (min-width:768px) and (max-width:992px)"/>
+        //pc端
+        <link rel="stylesheet" href="" media="screen and (min-width:992px)"/>
+
+        */
+        /*
+        移动端 背景颜色  红色
+        iPad端  背景颜色 绿色
+        pc端  背景颜色  蓝色
+
+        */
+        /*移动端*/
+        @media screen and (max-width: 768px){
+            body{
+                background-color: red;
+            }
+        }
+        /*ipad端*/
+        @media screen and (min-width: 768px) and (max-width: 992px){
+            body{
+                background-color: green;
+            }
+        }
+        /*pc端*/
+        @media screen and (min-width: 992px){
+            body{
+                background-color: blue;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+</body>
+</html>

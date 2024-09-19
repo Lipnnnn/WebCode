@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date对象</title>
+    <script>
+        /*
+            相关笔记：
+                1.官方网址：
+                    http://iwenwiki.com/webdoc/02JavaScript%E6%A8%A1%E5%9D%97/05.%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E6%A0%87%E5%87%86%E5%BA%93%E4%B9%8BMath%E4%B8%8EDate/#_2-5-42-date%E5%AF%B9%E8%B1%A1
+                2.本人博客：
+                    https://blog.csdn.net/Lipn_/article/details/133959320?spm=1001.2014.3001.5501
+         */
+
+
+        // 计算本年度还剩下多少天？
+        var newDate = new Date();
+        var endDate = new Date(2023,12,31,23,59,59,999);
+        var day = 1000*60*60*24;
+        var ans = Math.round((endDate.getTime()-newDate.getTime())/day);
+        console.log(ans);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

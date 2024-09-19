@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位练习</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            /*设置父元素的定位信息*/
+            position: relative;
+            /*溢出部分隐藏掉*/
+            overflow: hidden;
+        }
+        .box2{
+            width: 300px;
+            height: 100px;
+            background-color: #e77b2e;
+            /*设置子元素为绝对定位，相对于已经定位的父元素*/
+            position: absolute;
+            top: 300px;
+        }
+        /*鼠标悬停在父元素上，选中子元素box2*/
+        .box:hover > .box2{
+            /*子元素上移，距离父元素上端200px，子元素显示出来*/
+            top: 200px;
+        }
+
+        .boxx{
+            width: 300px;
+            height: 300px;
+            background-color: #ebce6b;
+            /*设置父元素相对定位*/
+            position: relative;
+            /*隐藏溢出的子元素部分*/
+            overflow: hidden;
+        }
+        .box3{
+            width: 100%;
+            height: 100%;
+        }
+        img{
+            /*100%表示设置的宽高与父元素的相同*/
+            width: 100%;
+            height: 100%;
+        }
+        .box4{
+            width: 300px;
+            height: 300px;
+            /*设置背景颜色为黑色半透明*/
+            background-color: rgba(0,0,0,0.5);
+            /*设置子元素为绝对定位，距离父元素上部为0，左侧为300*/
+            position: absolute;
+            top: 0;
+            left: 300px;
+        }
+        .boxx:hover > .box4{
+            left: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="box2"></div>
+</div>
+<div class="boxx">
+    <div class="box3">
+        <img src="111.jpg" alt="">
+    </div>
+    <div class="box4"></div>
+</div>
+
+</body>
+</html>

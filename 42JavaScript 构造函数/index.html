@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+    <script>
+        /*
+        ES5没有类的概念，使用函数模拟类
+
+        类的特征：
+            1. 首字母一定要大写，这是规范，代表是一个类的概念
+            2. 函数体内部使用了this关键字
+         */
+
+        // People：类
+        var People = function (name,age){
+            this.name = name;
+            this.age = age;
+            this.getName = function (){
+                console.log(this.name);
+            }
+        }
+
+        // zhangsan：实例对象
+        var zhangsan = new People('zhangsan',10);
+        console.log(zhangsan.name,zhangsan.age);
+        zhangsan.getName();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

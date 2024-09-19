@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        绘制特殊图形
+        1）画圆
+        border-radius:50%;
+
+        2）绘制三角形
+        利用border
+        容器宽高设置为0px
+        例如：绘制向右的三角形
+        需要左边框
+        上下两侧的边框设置为透明
+
+        3）绘制梯形
+        在三角形的基础上：
+        绘制垂直方向的梯形,需要设置高度
+        绘制水平方向的梯形,需要设置宽高
+
+
+        */
+        .box{
+            width: 0;
+            height: 0px;
+            border-top: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid red;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

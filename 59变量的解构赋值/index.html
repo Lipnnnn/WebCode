@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量的解构赋值</title>
+</head>
+<body>
+<script>
+    // 数组的解构赋值
+    // 以前为变量赋值，只能一个一个赋值
+    let a = 1;
+    let b = 2;
+    let c = 3;
+    // ES6可以写成下面这样
+    let [aa,bb,cc] = [1,2,3];
+
+    // 对象的解构赋值
+    let obj = {
+        name: '张三',
+        age: 20
+    }
+    // 对象的解构，变量必须与属性同名，才能取到正确的值。
+    const {name,age} = obj;
+    // 就是方便访问变量的时候不用再像以前一样写`obj.name`了
+    console.log(name,age);  // 张三 20
+
+</script>
+</body>
+</html>

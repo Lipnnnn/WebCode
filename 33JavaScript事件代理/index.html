@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件代理</title>
+</head>
+<body>
+
+    <ul id="ul_click">
+        <li>内容1</li>
+        <li>内容2</li>
+        <li>内容3</li>
+        <li>内容4</li>
+        <li>内容5</li>
+    </ul>
+
+    <script>
+        /*
+            什么是事件代理？
+            由于事件会在冒泡阶段向上传播到父节点，因此可以把子节点的监听函数定义在父节点上，
+            由父节点的监听函数统一处理多个子元素的事件。这种方法叫做事件的代理（delegation）。
+         */
+
+        /*
+            需求：点击li标签的时候在控制台打印li标签的内容。（li标签有很多个）
+            我们可以将监听事件定义到ul上，这样就可以通过事件冒泡达到这个效果
+         */
+        var ul_click = document.getElementById("ul_click");
+        ul_click.addEventListener("click",function (e){
+            // 判断是否点击了li
+            if(e.target.tagName.toLowerCase() === 'li'){
+                console.log(e.target.innerHTML);
+            }
+        })
+
+
+    </script>
+
+</body>
+</html>

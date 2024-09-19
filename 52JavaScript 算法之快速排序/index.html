@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快速排序</title>
+
+    <script>
+
+        /*
+            什么是快速排序？
+            第一步：在一个数组中找到中间位置的那个数num
+            第二步：把原数组中小于num的数放到num的左边，大于num的数放到num的右边
+            第三步：在num的左边和num的右边又形成两个新的数组
+            第四步：把两个新的数组一直重复以上三步，直到新数组的元素数量为1时，就表示原数组排序完毕
+         */
+
+        function quickSort(arr){
+            if(arr.length <= 1){
+                return arr;
+            }
+            // 找到最中间的数的下标centerIndex
+            var centerIndex = Math.floor(arr.length / 2);  // Math.floor()向下取整
+            // 获取到中间的数centerNum
+            var centerNum =  arr.splice(centerIndex,1)[0];  // splice()方法返回的是一个数组，这里一定需要用splice()方法删除这个数，否则后面会出现死循环
+            var left = [];
+            var right = [];
+            for(var i=0;i<arr.length;i++){
+                if(arr[i] <= centerNum){
+                    left.push(arr[i]);
+                }else {
+                    right.push(arr[i]);
+                }
+            }
+            // 这里concat()需要把中间那个基准数centerNum也要加入进来，以数组的形式连接。
+            return quickSort(left).concat([centerNum],quickSort(right));
+        }
+
+        var arr = [9,5,8,7,6,5];
+        console.log(quickSort(arr));
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<body>
+<!--
+表单：
+1）标签：
+<form action="" name="" method=""></form>
+action：提交的地址
+name：表单的名称
+method：提交的方式，默认get，取值post
+
+get和post的区别：
+①get提交数据不安全，会在地址栏中显示；post安全。
+②get提交数据的大小有限制，不能大于2KB；post理论上没有限制。
+
+2）完整的表单由三部分组成：
+①form
+②表单域  例如用户名、密码等
+③表单按钮  例如登录、注册等
+表单域和表单按钮可以统称为表单元素
+
+3）表单元素：
+下拉列表：
+<select>
+    <option>...</option>
+    <option>...</option>
+</select>
+
+多行文本框：
+<textarea></textarea>
+
+提升用户体验感：
+<label for=""></label>
+for属性和id属性一致
+例如：
+<label for="title">标题：</label>
+<input type="text" id="title">
+
+文件：
+<input type="file"/>  修改表单的编码格式为二进制，enctype="multipart/form-data"
+
+图片提交按钮：
+<input type="image" src=""/>
+
+隐藏域：
+<input type="hidden"/>  用户不可见，携带的信息可以正常地提交到服务器
+
+4）表单元素常用属性：
+type：表单元素的类型
+name：表单元素的名称
+value：当前值
+checked：默认被选中，配合单选按钮和多选按钮使用
+selected：默认显示，配合option使用
+disabled：禁用
+readonly：只读
+
+5）HTML5新增type类型
+邮箱：<input type="email">  必须包含@,@后面必须有内容
+网址：<input type="url">  必须包含一个协议,协议后面必须有内容,常见的协议http和https
+搜索：<input type="search">
+电话：<input type="tel">  适用于移动端
+数字：<input type="number" min="最小值" max="最大值" value="当前值" step="步长"/>
+范围：<input type="range" min="最小值" max="最大值" value="当前值" step="步长">
+颜色：<input type="color">
+日期：<input type="date">
+月：<input type="month">
+周：<input type="week">
+
+6）HTML5新增表单元素的属性
+placeholder=""  默认提示
+autofocus  当页面一加载,input会自动获取焦点,适用所有的input,推荐写在第一个input上
+了解：
+required  必填项
+multiple  可以输入多个,用英文的逗号隔开,适用邮箱和网址
+minlength  最小长度,英文字母、数字、汉字等都算一个长度
+maxlength  最大长度,英文字母、数字、汉字等都算一个长度
+
+-->
+
+</body>
+</html>

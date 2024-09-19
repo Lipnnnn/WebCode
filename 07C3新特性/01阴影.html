@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*
+        盒阴影（掌握！）
+        例：box-shadow: -10px -10px 30px -10px green inset;
+        box-shadow:水平方向偏移位置 垂直方向偏移位置 模糊度 阴影尺寸 颜色 位置;
+                        必须            必须      可选   可选   可选 可选
+                        正负            正负      正值   正负      outset|inset
+
+         字阴影（用得少）
+         text-shadow:水平方向偏移位置 垂直方向偏移位置 模糊度 颜色;
+
+
+        */
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            margin: 50px;
+            font-size: 30px;
+            text-shadow: 5px -5px 5px green;
+        }
+        .box:hover{
+            /*box-shadow: -10px -10px 30px -10px green inset;*/
+            /*box-shadow: 0 10px 30px gold;*/
+            box-shadow: 0 0 30px inset;
+        }
+    </style>
+</head>
+<body>
+<div class="box">尚学堂前端学院</div>
+
+</body>
+</html>

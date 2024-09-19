@@ -1,0 +1,225 @@
+html,body,.box{
+   width: 100%;
+    height: 100%;
+}
+/*迅雷样式开始*/
+.nav{
+    width: 100%;
+    height: 85px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.logo{
+    width: 117px;
+    height: 55px;
+    margin: 15px 0 15px 30px;
+    float: left;
+}
+.nav-bar{
+    float: right;
+}
+.nav-bar li{
+    float: left;
+    width: 156px;
+    height: 85px;
+    line-height: 85px;
+}
+.nav-bar a{
+    color: #fff;
+}
+.nav-bar i{
+    font-size: 20px;
+    margin-right: 13px;
+}
+.nav-list{
+    width: 156px;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+    right: -156px;
+    transition: all .5s;
+}
+.more{
+    /*必须配合定位使用*/
+    z-index: 666;
+    position: relative;
+}
+.nav-bar li:hover>.nav-list{
+    right: 0;
+}
+/*迅雷样式结束*/
+/*第一块样式开始*/
+.one{
+    overflow: hidden;
+    position: relative;
+}
+.one>video{
+    width: 100%;
+}
+.text{
+    width: 716px;
+    height: 193px;
+    position: absolute;
+    /*相对于父元素往下走父元素的50%*/
+    top: 50%;
+    /*相对于父元素往右走父元素的50%*/
+    left: 50%;
+    /*往左上走自己宽高的一半*/
+    transform: translate(-50%,-50%);
+}
+.text>img{
+    width: 100%;
+}
+.text>a{
+    display: block;
+    width: 180px;
+    height: 50px;
+    border: 1px solid #fff;
+    margin: 30px auto 20px;
+    color: #fff;
+    line-height: 50px;
+}
+.text>a:hover{
+    background-color: rgba(255,255,255,.5);
+}
+.text>i{
+    color: #fff;
+    font-size: 40px;
+    animation: upDown 1s linear infinite;
+    /*位移对行内元素不生效*/
+    display: block;
+}
+@keyframes upDown {
+    0%{
+        transform: translateY(0);
+    }
+    33%{
+        transform: translateY(-3px);
+    }
+    66%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(3px);
+    }
+}
+/*第一块样式结束*/
+/*第二块样式开始*/
+.two{
+    position: relative;
+}
+.img{
+    width: 100%;
+    height: 100%;
+    /*把行内块的图片转换为块级元素  行内块会识别代码之间的空白*/
+    display: block;
+}
+.two>ul{
+    width: 510px;
+    height: 71px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.two li{
+    width: 102px;
+    height: 70px;
+    border-bottom: 1px solid rgba(255,255,255,.6);
+    float: left;
+}
+.two a{
+    /*转换为块级元素  行内元素设置宽高不生效*/
+    display: block;
+    width: 47px;
+    height: 41px;
+    margin: 14.5px auto;
+    background-image: url("../images/carousel_btns.png");
+    background-size: 818px;
+    transition: all .5s linear;
+}
+.two li:first-child>a{
+    background-position: -642px;
+}
+.two li:nth-child(2)>a{
+    background-position: -117px;
+}
+.two li:nth-child(3)>a{
+    background-position: -738px;
+}
+.two li:nth-child(4)>a{
+    background-position: -224px;
+}
+.two li:nth-child(5)>a{
+    background-position: -447px;
+}
+.two li:hover{
+    border-bottom-color: #fff;
+}
+.two li:hover>a{
+    transform: translateY(-5px);
+}
+/*第二块样式结束*/
+/*第三块样式开始*/
+.three>div{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.three-left>div{
+    width: 100%;
+    height: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.hidden{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: all .5s linear;
+}
+.three-right,.four-right-top{
+    position: relative;
+    overflow: hidden;
+}
+.three-right:hover .hidden,.three-left>div:hover .hidden,.four-left:hover .hidden,.four-right-top:hover .hidden,.four-right-bottom>div:hover .hidden{
+    left: 0;
+}
+/*第三块样式结束*/
+/*第四块样式开始*/
+.four-left{
+    width: 34%;
+    height: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+.four-right{
+    width: 66%;
+    height: 100%;
+    float: left;
+}
+.four-right>div{
+    width: 100%;
+    height: 50%;
+}
+.four-right-bottom>div{
+    width: 50%;
+    height: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+/*第四块样式结束*/
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串相关的方法</title>
+    <script>
+
+        /*
+            这里一共列举了12个常用方法：（需要掌握！）
+            charAt(); concat(); slice(); substring(); substr(); indexOf();
+            trim(); toLowerCase(); toUpperCase(); search(); replace(); split();
+         */
+
+        // 1.charAt()：返回指定位置的字符，参数是从0开始编号的位置。
+        s.charAt(1);
+
+        // 2.concat()：用于连接两个字符串，返回一个新字符串，不改变原字符串。
+        s1.concat(s2);
+
+        // 3.slice()：用于从原字符串取出子字符串并返回，不改变原字符串。它的第一个参数是子字符串的开始位置，第二个参数是子字符串的结束位置（不含该位置）。
+        'JavaScript'.slice(0, 4); // "Java"
+        //如果省略第二个参数，则表示子字符串一直到原字符串结束。
+        'JavaScript'.slice(4); // "Script"
+
+        // 4.substring()：用于从原字符串取出子字符串并返回，不改变原字符串，跟slice方法很相像。它的第一个参数表示子字符串的开始位置，第二个位置表示结束位置（返回结果不含该位置）。
+        'JavaScript'.slice(0, 4); // "Java"
+        //如果省略第二个参数，则表示子字符串一直到原字符串结束。
+        'JavaScript'.slice(4); // "Script"
+
+        // 5.substr()：用于从原字符串取出子字符串并返回，不改变原字符串，跟slice和substring方法的作用相同。
+        //            不同点：substr方法的第一个参数是子字符串的开始位置（从0开始计算），第二个参数是子字符串的长度。
+        'JavaScript'.substr(4, 6); // "Script"
+
+        // 6.indexOf()：用于确定一个字符串在另一个字符串中第一次出现的位置，返回结果是匹配开始的位置。如果返回-1，就表示不匹配。
+        'hello world'.indexOf('o') // 4
+        'JavaScript'.indexOf('script') // -1
+        // indexOf方法还可以接受第二个参数，表示从该位置开始向后匹配。
+        'hello world'.indexOf('o', 6) // 7
+
+        // 7.trim()：用于去除字符串两端的空格，返回一个新字符串，不改变原字符串。
+        '  hello world  '.trim();
+
+        // 8.toLowerCase()：用于将一个字符串全部转为小写
+
+        // 9.toUpperCase()：用于将一个字符串全部转为大写
+
+        // 10.search()：search方法的用法基本等同于match，但是返回值为匹配的第一个位置。如果没有找到匹配，则返回-1。
+        'cat, bat, sat, fat'.search('at') // 1
+
+        // 11.replace()：用于替换匹配的子字符串，一般情况下只替换第一个匹配（除非使用带有g修饰符的正则表达式）。
+        'aaa'.replace('a', 'b') // "baa"
+
+        // 12.split()：按照给定规则分割字符串，返回一个由分割出来的子字符串组成的数组。
+        'a|b|c'.split('|') // ["a", "b", "c"]
+        // 如果分割规则为空字符串，则返回数组的成员是原字符串的每一个字符。
+        'a|b|c'.split('') // ["a", "|", "b", "|", "c"]
+        // 如果省略参数，则返回数组的唯一成员就是原字符串。
+        'a|b|c'.split() // ["a|b|c"]
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+    <style>
+        /*
+        animation动画
+        1）作用：
+            使元素从一个样式 逐渐 变为另一个样式
+            可以控制过程
+
+            过渡只能控制开始和结束的状态
+
+        2）定义动画的过程：
+            @keyframes name{
+                0%/from{
+                    css样式;
+                }
+                任意百分比{
+                    css样式;
+                }
+                100%/to{
+                    css样式;
+                }
+            }
+
+         3）调用动画：                                                  无限循环
+            animation: name  持续时间  速度变化类型  延迟时间  播放次数(number/infinite)  播放方向(alternate)  动画停在最后一帧(forwards);
+                       必须   必须      可选        可选      可选                       可选
+
+         4）动画的单个属性：
+                animation-name: ;  动画名称——必须
+                animation-duration: ;  动画的持续时间——必须  默认0s|0ms
+                animation-timing-function: ;  动画的速度变化类型——可选  默认ease  取值ease-in  ease-out  ease-in-out  linear
+                animation-delay: ;  动画的延迟时间——可选  默认0s|0ms  取正负
+                animation-iteration-count: ;  动画的播放次数——可选  取值number|infinite
+                animation-direction: ;  动画的播放方向——可选  取值alternate:偶数次倒序播放
+                animation-fill-mode: ;  动画停在最后一帧——可选  取值forwards
+
+                animation-play-state:;  动画的播放状态  默认running  取值paused  一般配合hover使用
+          */
+    </style>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #e77b2e;
+        }
+        .box:hover{
+            animation: change 3s;
+        }
+        @keyframes change {
+            0%{
+                border-radius: 50%;
+            }
+            50%{
+                width: 500px;
+            }
+            100%{
+                background-color: #ff64a6;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

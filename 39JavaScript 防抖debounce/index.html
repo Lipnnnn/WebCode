@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>防抖debounce</title>
+    <style>
+        h1{
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>内容1</h1>
+<h1>内容2</h1>
+<h1>内容3</h1>
+<h1>内容4</h1>
+<h1>内容5</h1>
+<h1>内容6</h1>
+
+<script>
+    /*
+        什么是防抖？
+        对于短时间内连续触发的事件，防抖的含义就是让某个时间期限内，时间处理函数值执行一次
+     */
+
+    /*
+        应用场景之一：
+        鼠标滚动，让屏幕上下滑动，打印网页的垂直滚动距离，默认是每滑一下就会打印很多数据出来，
+        我们需要添加防抖代码，实现在一段时间内只打印一次
+     */
+
+    // 将打印代码抽成一个函数
+    function fun(){
+        var height = document.documentElement.scrollTop;
+        console.log(height);
+    }
+
+    // 防抖代码：debounce()函数要记住！
+    // 调用这个防抖函数时，需要传入两个参数，fun表示传入一个需要执行的函数，delay表示时间间隔，需要隔多长时间执行一次这个函数
+    function debounce(fun,delay){
+        var timer = null;
+        return function (){
+            if(timer){
+                clearTimeout(timer);
+            }
+            timer = setTimeout(fun,delay);
+        }
+    }
+
+    window.onscroll = debounce(fun,300);
+
+
+</script>
+
+</body>
+</html>

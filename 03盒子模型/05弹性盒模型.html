@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹性盒模型</title>
+</head>
+<body>
+<!--
+弹性盒模型  伸缩盒模型  flexbox
+主要用于移动端布局
+目的是设置子元素排列、对齐方式和分配剩余空白空间
+
+名词：
+父元素——弹性容器
+子元素——弹性项目
+主轴——默认为x轴
+侧轴——默认为y轴
+
+注意：float在弹性盒模型中不生效
+
+1.写在父元素上的属性：
+1）开启弹性盒模型：
+display: flex;
+子元素默认水平排列
+
+2）设置子元素的排列方式：
+flex-direction:;
+row  默认值  子元素从左往右排列
+row-reverse  子元素从右往左排列
+column  子元素从上往下排列
+column-reverse  子元素从下往上排列
+
+3）设置子元素在主轴的对齐方式：
+默认主轴为x轴，侧轴为y轴；当子元素垂直排列时，y轴为主轴，侧轴为x轴
+justify-content:;
+flex-start  默认值  弹性盒的开始
+flex-end  弹性盒的结束
+center  居中
+space-between  在子元素之间平均分配父元素剩余的空间
+space-around  在子元素四周分配父元素剩余的空间，两端是中间的一半
+
+
+4）设置子元素在侧轴的对齐方式：
+align-items:;
+flex-start  默认值  弹性盒的开始
+flex-end  弹性盒的结束
+center  居中
+
+2.写在子元素上的属性：
+flex-grow: number;
+子元素占父元素剩余空间的比例
+
+-->
+</body>
+</html>

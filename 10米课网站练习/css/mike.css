@@ -1,0 +1,475 @@
+/*头部导航栏样式开始*/
+.nav{
+    width: 100%;
+    height: 66px;
+    background-color: #88c5e1;
+    border-bottom: 5px solid #54abd4;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.wrap{
+    /*这里宽度要使用百分比，因为如果使用确定的值，当屏幕宽度变小时水平方向会出现滚动条*/
+    width: 87%;
+    margin: 0 auto;
+    /*background-color: red;*/
+}
+.nav_search input{
+    width: 100%;
+    height: 38px;
+    margin-top: 13px;
+    border: 1px solid #f5f5f5;
+    background-color: #f5f5f5;
+    border-radius: 2px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    outline: none;
+}
+.nav_search input:focus{
+    background-color: white;
+    border: 1px solid #54abd4;
+}
+.nav_search button{
+    width: 40px;
+    height: 34px;
+    color: #54abd4;
+    font-weight: 900;
+    position: absolute;
+    right: 2px;
+    top: 16px;
+    background-color: #f5f5f5;
+}
+.nav_list ul{
+    float: right;
+}
+.nav_list li{
+    float: left;
+    width: 60px;
+    height: 55px;
+    margin-left: 8px;
+}
+.nav_list li:hover{
+    border-bottom: 2px solid white;
+}
+.nav_list a{
+    color: white;
+    padding: 10px;
+    display: block;
+    margin-top: 12.5px;
+}
+/*头部导航栏样式结束*/
+
+/*登录样式开始*/
+.login{
+    width: 100%;
+    /*background-color: #e77b2e;*/
+    background-image: url("../images/homeImg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top: 71px;
+}
+.login_left_img1{
+    width: 180px;
+    height: 203px;
+    /*background-color: red;*/
+    margin: 0 auto;
+}
+.login_left_img1 img{
+    width: 100%;
+    height: 100%;
+}
+.login_left_img2{
+    width: 180px;
+    height: 55px;
+    /*background-color: black;*/
+    margin: 0 auto;
+}
+.login_right{
+    height: 232px;
+    /*background-color: red;*/
+    float: right;
+}
+.login_right a{
+    color: white;
+}
+.login_right_text{
+    margin-right: 15px;
+    padding-bottom: 3px;
+    float: left;
+}
+.login_right_text:hover{
+    border-bottom: 2px solid white;
+}
+#login_right_a1{
+    border-bottom: 2px solid white;
+    padding-bottom: 3px;
+}
+.login_right_input{
+    width: 100%;
+    height: 40px;
+    margin-top: 13px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    border-radius: 2px;
+    outline: none;
+}
+.login_right_input:hover{
+    background-color: white;
+    border: 1px solid #54abd4;
+}
+.login_right_checkbox,.login_right_remeber{
+    float: left;
+}
+.login_right_checkbox{
+    margin-right: 10px;
+}
+.login_right_remeber{
+    position: relative;
+    top: -3px;
+}
+.login_right_forget{
+    float: right;
+}
+.login_right_forget:hover{
+    text-decoration: underline;
+}
+.login_right_div{
+    width: 100%;
+    height: 16px;
+    margin: 15px 0;
+    font-size: 12px;
+    color: white;
+}
+.login_right_submit{
+    width: 100%;
+    height: 44px;
+    color: white;
+    background-color: #88c5e1;
+    font-size: 16px;
+    box-shadow: 0 8px #54abd4;
+    border-radius: 5px;
+    /*设置字间距，这里是设置“登录”两个字之间的距离，（这个属性不常用，但是要知道！）*/
+    letter-spacing: 2px;
+}
+.login_right_submit:hover{
+    transform: translateY(3px);
+    box-shadow: 0 5px #54abd4;
+}
+
+/*登录样式结束*/
+
+/*主体开始*/
+.content{
+    width: 100%;
+    padding-top: 40px;
+}
+/*新课速递开始*/
+.new_course,.hot_course,.hot_label{
+    background-color: white;
+    padding-bottom: 60px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 14px 10px -10px rgba(0,0,0,0.1);
+}
+.new_course_title,.hot_course_title,.hot_label_title{
+    width: 100%;
+    color: black;
+    font-size: 18px;
+    text-align: left;
+    height: 40px;
+    margin: 40px 0 36px 0;
+    padding: 8px 0 8px 16px;
+    border-left: 3px solid #54abd4;
+    box-sizing: border-box;
+}
+.new_course_img{
+    box-sizing: border-box;
+    padding: 10px;
+    float: left;
+    /*background-color: #eeede8*/
+}
+.new_course_img img{
+    width: 100%;
+}
+.new_course_img_text{
+    width: 100%;
+    height: 80px;
+    background-color: #eeede8;
+    color: #999;
+    line-height: 80px;
+}
+/*新课速递样式结束*/
+/*最热门课程榜样式开始*/
+.more{
+    font-size: 12px;
+    color: #7d7d7d;
+}
+.more:hover{
+    color: #54abd4;
+    text-decoration: underline;
+}
+.hot_course_box{
+    width: 100%;
+}
+.hot_course_box_list{
+    float: left;
+    padding: 52px 16px;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+    margin: 5px;
+}
+.hot_course_box_list_img1{
+    width: 46px;
+    height: 46px;
+}
+.hot_course_box_list_desc{
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+    display: block;
+    margin-top: 3px;
+}
+.hot_course_box_list_name{
+    height: 29px;
+    width: 100%;
+    margin-top: 15px;
+}
+.list{
+    color: white;
+    font-size: 14px;
+    background-color: #88c5e1;
+    /*设置为行内块，既能设置宽高和margin，又能在同一行显示*/
+    display: inline-block;
+    padding: 3px 5px;
+    border-radius: 4px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+.hot_course_box_list_score{
+    font-size: 12px;
+    color: #f8ce38;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.hot_course_box_list_score img{
+    width: 12px;
+}
+.hot_course_box_list_score span{
+    position: relative;
+    top: -2px;
+}
+.hot_course_box_list_comment{
+    font-size: 12px;
+    color: #7d7d7d;
+}
+.hot_course_box_list_comment a{
+    font-size: 12px;
+    color: #7d7d7d;
+}
+/*最热门课程榜样式结束*/
+/*热门标签样式开始*/
+.hot_label h5{
+    font-weight: 400;
+    color: #666;
+    padding: 8px 0 16px;
+    float: left;
+}
+/*热门标签样式结束*/
+/*主体结束*/
+
+/*********************************移动端开始***************************************/
+@media screen and (max-width: 768px){
+    /*头部导航栏开始*/
+    .nav_logo{
+        width: 16%;
+        height: 66px;
+        /*background-color: red;*/
+        float: left;
+        background-image: url("../images/Brand-S.png");
+        background-size: 38px;
+        background-repeat: no-repeat;
+        /*设置背景图片垂直居中显示*/
+        background-position: left center;
+    }
+    .nav_search{
+        width: 68%;
+        height: 66px;
+        /*background-color: black;*/
+        float: left;
+        position: relative;
+    }
+    .nav_list{
+        display: none;
+    }
+    .nav_list_phone{
+        width: 12%;
+        height: 66px;
+        /*background-color: #e77b2e;*/
+        float: right;
+    }
+    .nav_list_phone i{
+        width: 43px;
+        height: 43px;
+        color: white;
+        display: block;
+        border: 1px solid white;
+        line-height: 45px;
+        margin-top: 10.5px;
+    }
+    /*头部导航栏结束*/
+    /*登录样式开始*/
+    .login{
+        height: 365px;
+    }
+    .login_left{
+        display: none;
+    }
+    .login_right{
+        width: 100%;
+        margin-top: 85px;
+    }
+    /*登录样式结束*/
+    /*新课速递开始*/
+    .new_course,.hot_course{
+        width: 100%;
+    }
+    .new_course_img {
+        width: 100%;
+    }
+    /*新课速递结束*/
+    /*最热门课程榜样式开始*/
+    .hot_course_box_list {
+        width: 100%;
+    }
+    /*最热门课程榜样式结束*/
+}
+/*********************************移动端结束*******************************************/
+
+/*********************************ipad端开始******************************************/
+@media screen and (min-width: 768px) and (max-width: 992px){
+    /*头部导航栏开始*/
+    .nav_logo{
+        width: 18%;
+        height: 66px;
+        /*background-color: red;*/
+        float: left;
+        background-image: url("../images/Brand-M.png");
+        background-size: 86px;
+        background-repeat: no-repeat;
+        /*设置背景图片垂直居中显示*/
+        background-position: left center;
+    }
+    .nav_search{
+        width: 42%;
+        height: 66px;
+        /*background-color: black;*/
+        float: left;
+        position: relative;
+    }
+    .nav_list{
+        width: 40%;
+        height: 66px;
+        /*background-color: #e77b2e;*/
+        float: left;
+    }
+    .nav_list_phone{
+        display: none;
+    }
+    /*头部导航栏结束*/
+    /*登录样式开始*/
+    .login{
+        height: 338px;
+    }
+    .login_left{
+        width: 57%;
+        height: 266px;
+        margin-top: 15px;
+        float: left;
+        /*background-color: #e77b2e;*/
+    }
+    .login_right{
+        width: 43%;
+        margin-top: 30px;
+    }
+    /*登录样式结束*/
+    /*新课速递开始*/
+    .new_course,.hot_course{
+        width: 100%;
+    }
+    .new_course_img {
+        width: 50%;
+    }
+    /*新课速递结束*/
+    /*最热门课程榜样式开始*/
+    .hot_course_box_list {
+        width: 45%;
+    }
+    /*最热门课程榜样式结束*/
+}
+/****************************************ipad端结束*****************************/
+
+/****************************************pc端开始*******************************/
+@media screen and (min-width: 992px){
+    /*头部导航栏开始*/
+    .nav_logo{
+        width: 25%;
+        height: 66px;
+        /*background-color: red;*/
+        float: left;
+        background-image: url("../images/Brand.png");
+        background-size: 183px;
+        background-repeat: no-repeat;
+        /*设置背景图片垂直居中显示*/
+        background-position: left center;
+    }
+    .nav_search{
+        width: 40%;
+        height: 66px;
+        /*background-color: black;*/
+        float: left;
+        position: relative;
+    }
+    .nav_list{
+        width: 35%;
+        height: 66px;
+        /*background-color: #e77b2e;*/
+        float: left;
+    }
+    .nav_list_phone{
+        display: none;
+    }
+    /*头部导航栏结束*/
+    /*登录样式开始*/
+    .login{
+        height: 460px;
+    }
+    .login_left{
+        width: 70%;
+        height: 266px;
+        margin-top: 75px;
+        float: left;
+        /*background-color: #e77b2e;*/
+    }
+    .login_right{
+        width: 30%;
+        margin-top: 75px;
+    }
+    /*登录样式结束*/
+    /*新课速递开始*/
+    .new_course,.hot_course{
+        width: 64%;
+    }
+    .new_course_img {
+        width: 50%;
+    }
+    /*新课速递结束*/
+    /*最热门课程榜样式开始*/
+    .hot_course_box_list {
+        width: 32%;
+    }
+    /*最热门课程榜样式结束*/
+}
+/********************************************pc端结束***********************************/
